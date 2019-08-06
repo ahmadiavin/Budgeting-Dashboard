@@ -1,0 +1,87 @@
+@import "../../App.scss";
+
+.register-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-right: 20%;
+  padding-left: 25%;
+  height: 50vh;
+
+  section {
+    margin-top: 20%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    height: 52vh;
+    width: 20vw;
+    padding: 7%;
+  }
+  .register-header {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  h2 {
+    color: #4c4c4c;
+    line-height: 1.1;
+    font-size: 24px;
+
+    font-weight: 400;
+  }
+  h4 {
+    font-family: $font-family;
+  }
+  input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 20px;
+    border-width: 2px;
+    border-style: inset;
+    height: 8%;
+    width: 100%;
+    animation: shake;
+  }
+
+  button {
+    color: white;
+    background: #0077c5;
+    border: #0077c5;
+    border-radius: 4px;
+    float: left;
+    text-transform: capitalize;
+    height: 44px;
+    width: 100%;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .bad-login {
+      text-align: center;
+      margin-bottom: 20%;
+      margin-left: 20%;
+      border: 1px outset rgb(146, 134, 134);
+      border-radius: 5px;
+      background:lightgray;
+    
+  }
+}

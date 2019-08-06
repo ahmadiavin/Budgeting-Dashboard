@@ -1,6 +1,7 @@
 import React from "react";
 // import axios from 'axios'
 import {Redirect} from 'react-router-dom';
+import './_login.scss'
 
 
 class Login extends React.Component {
@@ -32,7 +33,7 @@ class Login extends React.Component {
           return <Redirect to='/overview'/>
       }
     return (
-      <div>
+      <div className='login-cont'>
           <input
           placeholder='Username'
          onChange={this.handleChange}

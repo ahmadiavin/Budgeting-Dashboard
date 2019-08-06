@@ -1,0 +1,16 @@
+@mixin font($size: false, $colour: false, $weight: false,  $lh: false) {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+
+
+@mixin linkcolors ($link, $visited, $hover, $active) {
+    color: $link;
+    &:visited  { color: $visited; }
+    &:hover    { color: $hover;   }
+    &:active   { color: $active;  }
+  }
