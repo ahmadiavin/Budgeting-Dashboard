@@ -4,7 +4,7 @@ function Footer(props) {
     return (
         <footer>
             <ul>
-                <li>About</li>
+                <li>Contact</li>
                 <li>Terms of Use</li>
                 <li>Privacy</li>
                 <li>About</li>

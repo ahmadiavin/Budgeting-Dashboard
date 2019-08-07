@@ -1,13 +1,13 @@
 //initialState
 const initialState = {
     username: '',
-    balance: null,
-    name: ''
+    email: '',
+   
 }
 //constants
 const UPDATE_USERNAME = 'UPDATE_USERNAME';
-const UPDATE_BALANCE = 'UPDATE_BALANCE';
-const UPDATE_NAME = 'UPDATE_NAME';
+const UPDATE_EMAIL = 'UPDATE_EMAIL';
+
 //action creators
 export function updateUsername(username) {
     return {
@@ -15,18 +15,13 @@ export function updateUsername(username) {
         payload: username
     }
 }
-export function updateBalance(balance) {
+export function updateEmail(email) {
     return {
-        type: UPDATE_BALANCE,
-        payload: balance
+        type: UPDATE_EMAIL,
+        payload: email
     }
 }
-export function updateName(name) {
-    return {
-        type: UPDATE_NAME,
-        payload: name
-    }
-}
+
 //reducer
 export default function authReducer(state=initialState, action) {
     switch(action.type) {
@@ -35,16 +30,12 @@ export default function authReducer(state=initialState, action) {
                 ...state,
                 username: action.payload
             }
-        case UPDATE_BALANCE:
+        case UPDATE_EMAIL:
             return {
                 ...state,
-                balance: action.payload
+               email: action.payload
             }
-        case UPDATE_NAME:
-            return {
-                ...state,
-                name: action.payload
-            }
+        
         default: return state;
     }
 }

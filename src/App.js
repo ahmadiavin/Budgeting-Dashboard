@@ -5,10 +5,23 @@ import routes from './routes'
 import Footer from './components/Footer/Footer';
 
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      user: {}
+    }
+    this.updateUser = this.updateUser.bind(this);
+  }
+  updateUser(user) {
+    this.setState({
+      user
+    })
+  }
   render() {
+    const {user} = this.state;
     return (
       <div className="App">
-        <Nav />
+        <Nav user={user} updateUser={this.updateUser} />
         {routes}
         <Footer/>
 

@@ -1,8 +1,10 @@
 import React from "react";
-// import axios from 'axios'
-import {Redirect} from 'react-router-dom';
-import './_login.scss'
-
+import { Redirect } from "react-router-dom";
+import "./_login.scss";
+import { FaLock } from "react-icons/fa";
+import Axios from "axios";
+import { connect } from "react-redux";
+import { updateEmail, updateUsername } from "../../Redux/auth/authReducer";
 
 class Login extends React.Component {
   constructor(props) {
@@ -13,39 +15,65 @@ class Login extends React.Component {
       redirect: false
     };
   }
+  componentDidMount() {
+    Axios.get("/auth/user").then(res => {
+      if (!res.data.error) {
+        this.props.updateUsername(res.data.username);
+        this.props.updateEmail(res.data.email);
+        this.setState({ redirect: true });
+      }
+    });
+  }
 
   handleChange = e => {
-      this.setState({
-          [e.target.name]: e.target.value
-      })
-
-  }
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
   handleClick = e => {
-      this.setState({
-          redirect: true
-      })
-  }
-
-
+    Axios.post("/auth/login", {
+      username: this.state.username,
+      password: this.state.password
+    }).then(res => {
+      this.props.updateUsername(res.data.username);
+      this.props.updateEmail(res.data.email);
+      this.setState({ redirect: true });
+    });
+  };
 
   render() {
-      if (this.state.redirect === true) {
-          return <Redirect to='/overview'/>
-      }
+    if (this.state.redirect === true) {
+      return <Redirect to="/overview" />;
+    }
     return (
-      <div className='login-cont'>
+      <div className="login-cont">
+        <section>
+          <h2>Please Login</h2>
+          <h4>You can log in using the input fields</h4>
           <input
-          placeholder='Username'
-         onChange={this.handleChange}
-          type='text'></input>
+            name="username"
+            placeholder="Username"
+            onChange={this.handleChange}
+            type="text"
+          />
           <input
-          placeholder='Password'
-         onChange={this.handleChange}></input>
-        
-        <button onClick={this.handleClick}></button>
+            name="password"
+            placeholder="Password"
+            onChange={this.handleChange}
+            type="password"
+          />
+
+          <button onClick={this.handleClick}>
+            <FaLock /> Login
+          </button>
+          
+        </section>
       </div>
     );
   }
 }
 
-export default Login;
+export default connect(
+  undefined,
+  { updateEmail, updateUsername }
+)(Login);

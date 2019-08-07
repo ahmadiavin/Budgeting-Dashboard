@@ -1,10 +1,70 @@
-// @mixin flexAlign($direction) {
-//     display: flex;
-//     justify-content: flex-start;
-//     align-items: center;
-//     flex-direction: $direction;
+@import "../../App.scss";
 
-// }
+.login-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 50vh;
 
-//import './header
-// @extend header inherits all styles from  imported stylesheet
+  section {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    height: 40vh;
+    width: 20vw;
+    padding: 4%;
+  }
+  h2 {
+    color: #4c4c4c;
+    line-height: 1.1;
+    font-size: 24px;
+
+    font-weight: 400;
+  }
+  h4 {
+    font-family: $font-family;
+  }
+  input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 20px;
+    border-width: 2px;
+    border-style: inset;
+    height: 10%;
+    width: 100%;
+  }
+  button {
+    color: white;
+    background: #0077c5;
+    border: #0077c5;
+    border-radius: 4px;
+    float: left;
+    text-transform: capitalize;
+    height: 44px;
+    width: 100%;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+ 
+}

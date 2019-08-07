@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import {} from "../../Redux/auth/authReducer";
+import {updateEmail, updateUsername} from "../../Redux/auth/authReducer";
 import "./_register.scss";
 import { FaLock } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ class Register extends Component {
     this.state = {
       username: "",
       password: "",
-      verifypassword: "",
+      verifyPassword: "",
       email: "",
       badLogin: false,
       usernameTaken: false,
@@ -26,7 +26,7 @@ class Register extends Component {
   };
 
   handleClick = e => {
-    if (this.state.password !== this.state.verifypassword) {
+    if (this.state.password !== this.state.verifyPassword) {
       this.setState({ badLogin: true });
     } else {
       let body = {
@@ -37,6 +37,9 @@ class Register extends Component {
       Axios.post("/auth/register", body)
         .then(res => {
           console.log(res);
+          this.props.updateEmail(res.data.email);
+          this.props.updateUsername(res.data.username)
+          this.setState({redirect:true})
         })
         .catch(err => {
           if (err.req.status === 406 && err.res.data.err === "Username Taken") {
@@ -102,4 +105,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default connect(undefined, {updateEmail, updateUsername}) (Register);

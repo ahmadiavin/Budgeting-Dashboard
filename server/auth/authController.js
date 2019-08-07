@@ -22,8 +22,10 @@ module.exports = {
 
     login: async function(req, res) {
         const {username, password} = req.body;
+        // console.log(username, password)
         const db = req.app.get('db');
         const userInfo = await db.getUserInfo(username)
+        // console.log(userInfo)
         const correct = await bcrypt.compare(password, userInfo[0].password);
         if(correct === true) {
             req.session.user = {
@@ -37,5 +39,19 @@ module.exports = {
             })
         }
         
+    },
+    userCheck: function(req, res) {
+        if(req.session.user){
+            res.status(200).json(req.session.user);
+
+        } else {
+            res.status(404).json({
+                error: "User Not Found"
+            })
+        }
+    },
+    logout: async function(req, res) {
+        req.session.destroy()
+        return res.sendStatus(200)
     }
 }
