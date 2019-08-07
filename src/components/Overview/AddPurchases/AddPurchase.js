@@ -1,36 +1,44 @@
 import React, { Component } from "react";
-import './_addpurchase.scss'
+import "./_addpurchase.scss";
+// import {connect} from 'react-redux'
+// import {addPurchase} from '../../Redux/expenseReducer'
+import PurchaseList from './PurchaseList'
 class AddPurchase extends Component {
   constructor(props) {
     super(props);
     this.state = {
       date: "",
-      category: "other",
+      category: "",
       description: "",
       price: ""
     };
   }
 
-  add() {
-    let { price, category, description, date } = this.state;
-    let { addPurchase } = this.props;
+  add = e => {
+    e.preventDefault();
+
+    const { price, category, description, date } = this.state;
+    const { addPurchase } = this.props;
     let num = parseInt(price);
     if (num < 0) return alert("Price cannot be less than zero.");
     if (!Number.isNaN(num) && typeof num === "number") {
       if (num && category && description && date) {
         addPurchase(num, description, category, date);
         this.setState({
-          category: "other",
+          category: "",
           description: "",
           price: "",
-          date: Date.now() | date("Y-m-d")
+          date: ""
         });
       }
     }
-  }
+  };
 
   render() {
     const { price, category, description, date } = this.state;
+   
+    
+
     return (
       <table>
         <thead>
@@ -41,41 +49,27 @@ class AddPurchase extends Component {
             <th>date</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div>category</div>
-            </td>
-            <td>
-              <div>description</div>
-            </td>
-            <td>
-              <div>price</div>
-            </td>
-            <td>
-              <div>date</div>
-            </td>
-          </tr>
-        </tbody>
+         <PurchaseList/>  
         <tfoot className="tfoot-cont">
           <tr>
             <td>
               <form>
-                <div className='tf-category'>
+                <div className="tf-category">
                   <select
                     value={category}
                     onChange={e => this.setState({ category: e.target.value })}
                   >
-                    <option defaultValue value="Other">
-                      Other
+                    <option defaultValue="Misc" value="Misc">
+                      Misc
                     </option>
+                    <option value="Travel">Travel</option>
                     <option value="Rent">Rent</option>
-                    <option value="Groceries">Food</option>
+                    <option value="Food">Food</option>
                     <option value="Gas">Gas</option>
                     <option value="Entertainment">Entertainment</option>
                   </select>
                 </div>
-                <div className='tf-description'>
+                <div className="tf-description">
                   <input
                     value={description}
                     onChange={e =>
@@ -85,7 +79,7 @@ class AddPurchase extends Component {
                     type="text"
                   />
                 </div>
-                <div className='tf-price'>
+                <div className="tf-price">
                   <input
                     placeholder="Price"
                     min={1}
@@ -94,18 +88,16 @@ class AddPurchase extends Component {
                     onChange={e => this.setState({ price: e.target.value })}
                   />
                 </div>
-                <div className='tf-date'>
+                <div className="tf-date">
                   <input
                     type="date"
-                    id="aDate"
-                    name="aDate"
                     value={date}
                     onChange={e => this.setState({ date: e.target.value })}
                     placeholder="Date"
                   />
                 </div>
                 <div>
-                  <button onClick={() => this.add()}>Add</button>
+                  <button onClick={e => this.add(e)}>Add</button>
                 </div>
               </form>
             </td>
@@ -115,5 +107,11 @@ class AddPurchase extends Component {
     );
   }
 }
-
+// const mapStateToProps = reduxState => {
+//   return {
+//     expense: reduxState.expense
+//   }
+// }
 export default AddPurchase;
+
+// write a functional component for a row.

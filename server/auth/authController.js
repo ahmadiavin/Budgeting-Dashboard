@@ -45,13 +45,14 @@ module.exports = {
             res.status(200).json(req.session.user);
 
         } else {
-            res.status(404).json({
+            res.status(403).json({
                 error: "User Not Found"
             })
         }
     },
     logout: async function(req, res) {
         req.session.destroy()
+        // console.log("logout")
         return res.sendStatus(200)
     }
 }

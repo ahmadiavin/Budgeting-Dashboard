@@ -15,7 +15,6 @@ footer {
   width: 100vw;
   height: 5vh;
   position: absolute;
-  
 
   ul {
     list-style: none;
@@ -26,5 +25,29 @@ footer {
     justify-content: space-evenly;
     align-content: space-between;
     align-items: space-between;
+    &:hover {
+      cursor: pointer;
+    }
+    li {
+      &:hover {
+        transition: all 0.2s ease;
+        margin: 1px;
+      }
+      a {
+        &:hover {
+          color: white;
+        }
+        color: #666666;
+        // justify-content: center;
+        // text-decoration: none;
+        // text-align: center;
+        // line-height: 60px;
+        // display: block;
+        // padding: 0 20px;
+        // font-size: 12px;
+        // color: #999;
+        // text-transform: uppercase;
+      }
+    }
   }
 }

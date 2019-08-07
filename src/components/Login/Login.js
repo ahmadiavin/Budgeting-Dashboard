@@ -41,6 +41,14 @@ class Login extends React.Component {
     });
   };
 
+  // validate(username, email, password) {
+  // return {
+  //   email: email.length === 0,
+  //   username: username.length === 0,
+  //   password: password.length === 0
+  // }
+  //   }
+
   render() {
     if (this.state.redirect === true) {
       return <Redirect to="/overview" />;
@@ -66,7 +74,6 @@ class Login extends React.Component {
           <button onClick={this.handleClick}>
             <FaLock /> Login
           </button>
-          
         </section>
       </div>
     );

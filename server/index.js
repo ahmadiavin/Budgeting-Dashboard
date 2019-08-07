@@ -5,7 +5,7 @@ const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
 const { register, login, userCheck, logout } = require("./auth/authController");
-const { addPurchase } = require("./expenseController/expenseController");
+const { addPurchase, getData } = require("./expenseController/expenseController");
 
 //
 
@@ -35,12 +35,13 @@ app.post("/auth/login", login);
 app.get("/auth/user", userCheck);
 app.get("/auth/logout", logout);
 
-// app.use((req, res, next) => {
-//     if (req.session.user) return next();
-//     else res.sendStatus(401);
-// })
+app.use((req, res, next) => {
+    if (req.session.user) return next();
+    else res.sendStatus(401);
+})
 
 //Expenses
+app.get("/api/expense", getData)
 app.post("/api/expense/purchase", addPurchase);
 app.delete("/api/expense/purchase:id");
 
