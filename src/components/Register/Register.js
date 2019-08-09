@@ -65,29 +65,31 @@ class Register extends Component {
               placeholder="Username"
               onChange={this.handleChange}
               name="username"
-            />
+            /><br/>
             <input
               placeholder="Email"
               onChange={this.handleChange}
               name="email"
               type='email'
-            />
+            /><br/>
             <input
               placeholder="Password"
               onChange={this.handleChange}
               name="password"
               type='password'
-            />
+            /><br/>
             <input
               placeholder="Verify Password"
               onChange={this.handleChange}
               name="verifyPassword"
               type='password'
-            />
+            /><br/>
          
           <button onClick={this.handleClick}>
             <FaLock /> Register
           </button>
+          <br></br>
+          Already have an account? <a href='#/'>Login</a>
         </section>
         <br />
         <div className='bad-login'>

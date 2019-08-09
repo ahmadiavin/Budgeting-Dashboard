@@ -2,33 +2,40 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddPurchase from "./AddPurchases/AddPurchase";
-import { getExpenses, addPurchase } from "../../Redux/expenseReducer";
+import {
+  getExpenses,
+  addPurchase,
+  removePurchase
+} from "../../Redux/expenseReducer";
 import { updateEmail, updateUsername } from "../../Redux/auth/authReducer";
-// import LineChart from "./LineChart";
-
+import "./_overview.scss";
+import PieChart from "./Charts/PieChart";
 class Overview extends Component {
-  componentDidMount() {
-    this.props.getExpenses();
-  }
-
   render() {
-    console.log(this.props);
     if (this.props.auth.username === "") {
       return <Redirect to="/" />;
     }
     const { purchases } = this.props.expense;
 
     return (
-      <div>
-        <div>
-          <h1>Welcome {this.props.auth.username}</h1>
-          <h1>your email is : {this.props.auth.email}</h1>
+      <div className="mainview">
+        <header className="overviewHeader">
+          <h3>All transactions</h3>
+        </header>
+        <div className="sideview">
+          <h5>Welcome {this.props.auth.username}</h5>
+          <h5> Email: {this.props.auth.email}</h5>
         </div>
-        it's the Overview page!!!
-        <AddPurchase
-          addPurchase={this.props.addPurchase}
-          purchases={purchases}
-        />
+        <br />
+
+        <div className="addPurchase">
+          <PieChart purchases={purchases} />
+          <AddPurchase
+            removePurchase={this.props.removePurchase}
+            addPurchase={this.props.addPurchase}
+            purchases={purchases}
+          />
+        </div>
       </div>
     );
   }
@@ -42,5 +49,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { getExpenses, addPurchase, updateEmail, updateUsername }
+  { getExpenses, addPurchase, removePurchase, updateEmail, updateUsername }
 )(Overview);

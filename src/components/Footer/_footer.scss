@@ -4,17 +4,18 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: space-between;
-  align-items: space-between;
+  
+  align-items: center;
+  position: absolute;
   bottom: 0;
-  padding: 20px;
-  margin-top: 10%;
+  
   background: $bgcolor;
   color: #666666;
   font-size: 12px;
   width: 100vw;
-  height: 5vh;
-  position: absolute;
+  height: 8vh;
+ 
+  
 
   ul {
     list-style: none;
@@ -22,7 +23,7 @@ footer {
     display: flex;
 
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: space-between;
     align-items: space-between;
     &:hover {

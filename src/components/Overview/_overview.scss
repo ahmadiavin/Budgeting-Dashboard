@@ -1,11 +1,37 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
-.tfoot-cont {
-    display: flex;
-    flex-wrap: nowrap;
-    border-top: 1px solid $bgcolor;
-    background-color: #f0f0f0;
-    vertical-align: middle;
-    border-color: inherit;
-    box-sizing: inherit;
+.mainview {
+    
+    header {
+        height: 5vh;
+
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+            align-content: center;
+            align-items: center;
+        h3 {
+            font-size: 22px;
+            font-family: "AvenirNext-DemiBold-Mint","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-weight: 600;
+          
+        }
+        
+    }
+  .sideview{
+    min-height: 650px;
+    float: left;
+    margin-top: 32px;
+    width: 302px;
+    // border-right: 1px solid #ccc;
+    background: none!important;
+    box-shadow: -12px 0 20px -12px rgba(0,0,0,.1)inset;
+  }
+  .addPurchase{
+     display: flex;
+     justify-content: center;
+    
+  }
+
+  
 }

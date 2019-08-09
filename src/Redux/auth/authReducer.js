@@ -5,6 +5,7 @@ const initialState = {
    
 }
 //constants
+const LOGOUT_USER = 'LOGOUT_USER'
 const UPDATE_USERNAME = 'UPDATE_USERNAME';
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
 
@@ -21,6 +22,15 @@ export function updateEmail(email) {
         payload: email
     }
 }
+export function logoutUser(){
+    return {
+        type: LOGOUT_USER,
+        payload: {
+            username:'',
+            email:''
+        }
+    }
+}
 
 //reducer
 export default function authReducer(state=initialState, action) {
@@ -35,7 +45,10 @@ export default function authReducer(state=initialState, action) {
                 ...state,
                email: action.payload
             }
-        
+        case LOGOUT_USER:
+            return {
+                ...action.payload
+            }
         default: return state;
     }
 }

@@ -1,6 +1,9 @@
 import React from "react";
 import "./_nav.scss";
 import axios from "axios";
+import {clearExpenses} from '../../Redux/expenseReducer'
+import {logoutUser} from '../../Redux/auth/authReducer'
+import {connect} from 'react-redux'
 class Nav extends React.Component {
   constructor() {
     super();
@@ -11,7 +14,9 @@ class Nav extends React.Component {
     axios
       .get("/auth/logout")
       .then(() => {
-        this.props.updateUser({});
+        
+        this.props.logoutUser();
+        this.props.clearExpenses();
       })
       .catch(err => {
         console.log(err);
@@ -47,4 +52,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default connect(undefined, {logoutUser,clearExpenses})(Nav);

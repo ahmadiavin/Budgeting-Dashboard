@@ -63,17 +63,22 @@ class Login extends React.Component {
             placeholder="Username"
             onChange={this.handleChange}
             type="text"
-          />
+          />{" "}
+          <br />
           <input
             name="password"
             placeholder="Password"
             onChange={this.handleChange}
             type="password"
           />
-
+          <br />
           <button onClick={this.handleClick}>
             <FaLock /> Login
           </button>
+          <br />
+          <p>
+            New user? <a href="#register">Register</a> here.
+          </p>
         </section>
       </div>
     );

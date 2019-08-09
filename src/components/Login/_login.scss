@@ -5,21 +5,22 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 50vh;
+  // height: 55vh;
 
   section {
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     align-content: center;
     border: 1px solid black;
-    height: 40vh;
+    height: 45vh;
     width: 20vw;
     padding: 4%;
   }
   h2 {
+    
     color: #4c4c4c;
     line-height: 1.1;
     font-size: 24px;
@@ -27,6 +28,7 @@
     font-weight: 400;
   }
   h4 {
+    
     font-family: $font-family;
   }
   input {
@@ -50,8 +52,9 @@
     padding: 1px 20px;
     border-width: 2px;
     border-style: inset;
-    height: 10%;
+    height: 15%;
     width: 100%;
+    
   }
   button {
     color: white;
@@ -60,11 +63,23 @@
     border-radius: 4px;
     float: left;
     text-transform: capitalize;
-    height: 44px;
+    height: 60px;
     width: 100%;
     line-height: 1.4;
     white-space: nowrap;
     cursor: pointer;
+  }
+  p {
+   
+    
+    font-family: $font-family;
+    color: $bgcolor;
+  }
+  a{
+   
+   
+    font-family: $font-family;
+    color: $bgcolor;
   }
  
 }

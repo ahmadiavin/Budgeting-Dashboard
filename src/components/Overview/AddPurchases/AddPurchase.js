@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./_addpurchase.scss";
-// import {connect} from 'react-redux'
-// import {addPurchase} from '../../Redux/expenseReducer'
+import {connect} from 'react-redux'
+
 import PurchaseList from './PurchaseList'
+import {getExpenses, removePurchase} from '../../../Redux/expenseReducer'
 class AddPurchase extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,8 @@ class AddPurchase extends Component {
     if (num < 0) return alert("Price cannot be less than zero.");
     if (!Number.isNaN(num) && typeof num === "number") {
       if (num && category && description && date) {
-        addPurchase(num, description, category, date);
+        console.log(num)
+        addPurchase(price, description, category, date);
         this.setState({
           category: "",
           description: "",
@@ -37,19 +39,10 @@ class AddPurchase extends Component {
   render() {
     const { price, category, description, date } = this.state;
    
-    
+    const {purchases} = this.props;
 
     return (
       <table>
-        <thead>
-          <tr>
-            <th>category</th>
-            <th>description</th>
-            <th>price</th>
-            <th>date</th>
-          </tr>
-        </thead>
-         <PurchaseList/>  
         <tfoot className="tfoot-cont">
           <tr>
             <td>
@@ -103,15 +96,26 @@ class AddPurchase extends Component {
             </td>
           </tr>
         </tfoot>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+         <PurchaseList removePurchase={this.props.removePurchase}
+          
+          purchases={purchases}/>  
+        
       </table>
     );
   }
 }
-// const mapStateToProps = reduxState => {
-//   return {
-//     expense: reduxState.expense
-//   }
-// }
-export default AddPurchase;
+const mapStateToProps = state => {
+  return {
+    expense: state.expense
+  }
+}
+export default connect(mapStateToProps, {removePurchase,getExpenses}) (AddPurchase);
 
-// write a functional component for a row.

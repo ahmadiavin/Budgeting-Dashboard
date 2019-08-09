@@ -1,25 +1,44 @@
 import React from "react";
-export default function PurchaseList() {
-   
+import "./_purchaselist.scss";
+import { connect } from "react-redux";
+import { getExpenses } from "../../../Redux/expenseReducer";
 
-  return (
-    <table>
-    <tbody>
-      <tr>
-        <td>
-          <div>category</div>
-        </td>
-        <td>
-          <div>description</div>
-        </td>
-        <td>
-          <div>price</div>
-        </td>
-        <td>
-          <div>date</div>
-        </td>
-      </tr>
-    </tbody>
-    </table>
-  );
+class PurchaseList extends React.Component {
+  componentDidMount() {
+    this.props.getExpenses();
+  }
+
+  render() {
+    let { purchases } = this.props;
+    // console.log(this.props);
+    return (
+      <div className="list-cont">
+        {purchases.map(purchase => {
+          return (
+            <table>
+              <tbody>
+                <tr key={purchases.id}>
+                  <td>{purchase.category}</td>
+                  <td>{purchase.description}</td>
+                  <td>{purchase.price}</td>
+                  <td>{purchase.date}</td>
+                  <button
+                    className="close"
+                    onClick={() => this.props.removePurchase(purchase.id)}
+                  >
+                    X
+                  </button>
+                </tr>
+              </tbody>
+            </table>
+          );
+        })}
+      </div>
+    );
+  }
 }
+
+export default connect(
+  undefined,
+  { getExpenses }
+)(PurchaseList);
