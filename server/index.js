@@ -5,7 +5,12 @@ const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
 const { register, login, userCheck, logout } = require("./auth/authController");
-const { addPurchase, getData } = require("./expenseController/expenseController");
+const {
+  addPurchase,
+  getData,
+  deletePurchase,
+  edit
+} = require("./expenseController/expenseController");
 
 //
 
@@ -36,13 +41,14 @@ app.get("/auth/user", userCheck);
 app.get("/auth/logout", logout);
 
 app.use((req, res, next) => {
-    if (req.session.user) return next();
-    else res.sendStatus(401);
-})
+  if (req.session.user) return next();
+  else res.sendStatus(401);
+});
 
 //Expenses
-app.get("/api/expense", getData)
+app.get("/api/expense", getData);
 app.post("/api/expense/purchase", addPurchase);
-app.delete("/api/expense/purchase:id");
+app.delete("/api/expense/purchase/:id", deletePurchase);
+app.put("/api/expense/purchase/:id", edit);
 
 app.listen(5050, () => console.log("listening on  port 5050!"));

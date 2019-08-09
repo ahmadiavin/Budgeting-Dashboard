@@ -12,10 +12,12 @@ table {
   border: 1px solid #b1b1b1;
   border-collapse: collapse;
   font-size: 0.8em;
+  
+  
   thead {
     margin-right: 1%;
     display: flex;
-    background-color: #f0f0f0;
+    background-color: #cec8c8;
     border-bottom: 1px solid #b1b1b1;
 
     vertical-align: middle;
@@ -26,7 +28,11 @@ table {
       align-items: stretch;
       height: inherit;
       padding: 8px;
+      -webkit-border-horizontal-spacing: 1.6px;
+-webkit-border-vertical-spacing: 1.6px;
+
       th {
+        
         display: table-cell;
         vertical-align: inherit;
         font-weight: bold;
@@ -43,7 +49,7 @@ table {
     display: flex;
     flex-wrap: nowrap;
     border-top: 1px solid #b1b1b1;
-    background-color: #f0f0f0;
+    background-color:  #cec8c8;
     vertical-align: middle;
     tr {
       display: flex;
@@ -69,7 +75,7 @@ table {
           div {
             display: flex;
             button {
-              background-color: #b1b1b1;
+              background-color: $bgcolor;
               color: #fff;
               margin-left: 5px;
               text-transform: uppercase;
