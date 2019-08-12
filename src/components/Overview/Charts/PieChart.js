@@ -23,8 +23,8 @@ class PieChart extends Component {
             datasets: [
               {
                 data: amtSpentByCategory,
-                backgroundColor: ["#05eeb4", "#05a4ee", "#deee05", "#ee0505"],
-                hoverBackgroundColor: ["#05e4ee", "#de9e05", "#ee1505", "#ee0500"]
+                backgroundColor: [" #61c9aa", "#a36fa6", "#d67d67", "#dea65b","#5391ba"],
+                hoverBackgroundColor: ["#f7f7f779"]
               }
             ]
           }}

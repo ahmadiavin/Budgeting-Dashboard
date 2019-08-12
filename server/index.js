@@ -9,14 +9,13 @@ const {
   addPurchase,
   getData,
   deletePurchase,
-  edit
+  edit,
+  getBudget
 } = require("./expenseController/expenseController");
 
 //
 
 const app = express();
-
-app.use(express.json());
 
 app.use(
   session({
@@ -34,6 +33,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
   console.log("DB Connected");
 });
 
+app.use(express.json());
+
 //Auth
 app.post("/auth/register", register);
 app.post("/auth/login", login);
@@ -49,6 +50,7 @@ app.use((req, res, next) => {
 app.get("/api/expense", getData);
 app.post("/api/expense/purchase", addPurchase);
 app.delete("/api/expense/purchase/:id", deletePurchase);
-app.put("/api/expense/purchase/:id", edit);
+app.get("/api/expense/budget", getBudget);
+app.put("/api/expense/budget/:username", edit);
 
 app.listen(5050, () => console.log("listening on  port 5050!"));

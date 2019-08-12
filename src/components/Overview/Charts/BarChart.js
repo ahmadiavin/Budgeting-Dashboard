@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { HorizontalBar } from "react-chartjs-2";
 
 
-class CategoryBox extends Component {
+class BarChart extends Component {
   render() {
     let { purchases } = this.props;
     purchases = purchases || [];
@@ -24,8 +24,8 @@ class CategoryBox extends Component {
             datasets: [
               {
                 data: amtSpentByCategory,
-                backgroundColor: ["#05eeb4", "#05a4ee", "#deee05", "#ee0505"],
-                hoverBackgroundColor: ["#05e4ee", "#de9e05", "#ee1505", "#ee0500"]
+                backgroundColor: [" #61c9aa", "#a36fa6", "#d67d67", "#dea65b","#5391ba"],
+                hoverBackgroundColor: ["#grey"]
               }
             ]
           }}
@@ -35,4 +35,4 @@ class CategoryBox extends Component {
   }
 }
 
-export default CategoryBox;
+export default BarChart;

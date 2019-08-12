@@ -1,18 +1,15 @@
 import axios from "axios";
 const initialState = {
   purchases: [],
-<<<<<<< HEAD
-  budgetLimit:[],
+  budgetLimit: [],
   loading: false
-=======
-  budgetLimit:1000
->>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
 };
 const GET_EXPENSES = "GET_EXPENSES";
 const ADD_PURCHASE = "ADD_PURCHASE";
 const REMOVE_PURCHASE = "REMOVE_PURCHASE";
 const CLEAR_EXPENSES = "CLEAR_EXPENSES";
-const EDIT_BUDGET = "EDIT_BUDGET"
+const GET_BUDGET = "GET_BUDGET";
+const EDIT_BUDGET = "EDIT_BUDGET";
 
 export function getExpenses() {
   return {
@@ -22,7 +19,6 @@ export function getExpenses() {
 }
 
 export function addPurchase(price, description, category, date) {
-  // console.log(price, description, category, date)
   return {
     type: ADD_PURCHASE,
     payload: axios
@@ -37,11 +33,21 @@ export function removePurchase(id) {
   };
 }
 
-export function editBudget(id) {
+export function getBudget() {
+  return {
+    type: GET_BUDGET,
+    payload: axios.get("/api/expense/budget").then(res => res.data)
+  };
+}
+
+export function editBudget(username, newBudget) {
+  console.log(newBudget, "this is newBudget");
   return {
     type: EDIT_BUDGET,
-    payload: axios.put(`/api/expense/purchase/${id}`).then(res => res.data)
-  }
+    payload: axios
+      .put(`/api/expense/budget/${username}`, { newBudget })
+      .then(res => res.data)
+  };
 }
 export function clearExpenses() {
   return {
@@ -54,27 +60,61 @@ export function clearExpenses() {
 
 export default function expenseReducer(state = initialState, action) {
   switch (action.type) {
+    case `${GET_EXPENSES}_PENDING`:
+      return {
+        ...state,
+        loading: true
+      };
     case `${GET_EXPENSES}_FULFILLED`:
       return {
         ...state,
-        purchases: action.payload
+        purchases: action.payload,
+        loading: false
       };
-    case `${ADD_PURCHASE}_FULFILLED`:
-      // console.log(action.payload, "where is this action")
+    case `${ADD_PURCHASE}_PENDING`:
       return {
         ...state,
-        purchases: action.payload
+        loading: true
+      };
+    case `${ADD_PURCHASE}_FULFILLED`:
+      return {
+        ...state,
+        purchases: action.payload,
+        loading: false
+      };
+    case `${REMOVE_PURCHASE}_PENDING`:
+      return {
+        ...state,
+        loading: true
       };
     case `${REMOVE_PURCHASE}_FULFILLED`:
       return {
         ...state,
-        purchases: action.payload
+        purchases: action.payload,
+        loading: false
       };
-      case `${EDIT_BUDGET}_FULFILLED`:
-        return {
-          ...state,
-          budgetLimit: action.payload
-        }
+    case `${GET_BUDGET}_PENDING`:
+      return {
+        ...state,
+        loading: true
+      };
+    case `${GET_BUDGET}_FULFILLED`:
+      return {
+        ...state,
+        budgetLimit: action.payload,
+        loading: false
+      };
+    case `${EDIT_BUDGET}_PENDING`:
+      return {
+        ...state,
+        loading: true
+      };
+    case `${EDIT_BUDGET}_FULFILLED`:
+      return {
+        ...state,
+        budgetLimit: action.payload,
+        loading: false
+      };
     case CLEAR_EXPENSES:
       return {
         ...action.payload

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Bar } from "react-chartjs-2";
 
 export default class Chart2 extends Component {
-
   render() {
     let { purchases, budgetLimit } = this.props;
     purchases = purchases || [];
@@ -19,8 +18,8 @@ export default class Chart2 extends Component {
             datasets: [
               {
                 data: [moneySpent, remainingBudget],
-                backgroundColor: ["#05eeb4", "#05a4ee"],
-                hoverBackgroundColor: ["#deee05", "#ee0505"],
+                backgroundColor: ["rgb(184, 37, 37)", "rgb(49, 184, 37)"],
+                hoverBackgroundColor: [],
                 borderColor: ["#b1b1b1"]
               }
             ]

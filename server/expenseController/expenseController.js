@@ -5,6 +5,10 @@ module.exports = {
       .getExpenses(req.session.user.username);
     return res.status(200).send(userExpenses);
   },
+  getBudget: async function(req, res) {
+    const budgetData = await req.app.get('db').budgetInfo(req.session.user.username)
+    return res.status(200).send(budgetData)
+  },
   addPurchase: async function(req, res) {
     const { date, description, category, price } = req.body;
 
@@ -31,10 +35,11 @@ module.exports = {
   },
 
   edit: async function(req, res) {
-    const { id } = req.params;
-    const { budget } = req.body;
+    const { username } = req.params;
+    const { newBudget } = req.body;
+    console.log(req.body);
 
-    const editBudget = await req.app.get("db").changeBudget([budget, id]);
-    return res.status(200).send(editBudget);
+    await req.app.get("db").changeBudget([newBudget, username]);
+    return res.sendStatus(200);
   }
 };

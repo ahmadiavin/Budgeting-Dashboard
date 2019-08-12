@@ -1,7 +1,6 @@
 @import "../../App.scss";
 
 .mainview {
-<<<<<<< HEAD
     
     header {
       background: #f7f7f7;
@@ -14,34 +13,30 @@
             align-items: center;
         h3 {
             font-size: 16px;
-            font-family: "AvenirNext-DemiBold-Mint","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-family:$font-family;
             font-weight: 600;
           
         }
         
     }
   .sideview{
-   
-    min-height: 70vh;
-   margin-left: 10%;
+
+    min-height: 50vh;
+   margin-left: 5%;
     float: left;
     
-    width: 11vw;
+    width: 8vw;
     border-right: 1px solid #ccc;
     background: none!important;
     box-shadow: -12px 0 20px -12px rgba(0,0,0,.1)inset;
   }
   .addPurchase{
-    
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 60vw;
-   
+  height: 40vh;
+  width: 40vw;
     
   }
   .charts{
+    justify-content: space-around;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -51,9 +46,6 @@
     }
     
   }
-=======
-  
->>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
 
   
 }

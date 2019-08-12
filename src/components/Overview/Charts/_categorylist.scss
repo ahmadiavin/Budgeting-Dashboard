@@ -1,0 +1,80 @@
+@import "../../../App.scss";
+
+.legend {
+   
+    width: 15vw;
+  height: 30vh;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5px;
+  position: relative;
+
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  background: -webkit-linear-gradient(top, #fff, #f7f7f7);
+  p {
+    font-family: $font-family;
+
+    font-size: 12px;
+  }
+  li {
+    flex-wrap: wrap;
+    padding: 1px;
+    .color1 {
+      background: #61c9aa;
+      float: left;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+    .color2 {
+      background: #a36fa6;
+      float: left;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+    .color3 {
+      background: #d67d67;
+
+      float: left;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+    .color4 {
+      background: #dea65b;
+      float: left;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+    .color5 {
+      background: #5391ba;
+      float: left;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+    .category {
+      font-weight: 600;
+      float: left;
+    }
+    .price {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+}

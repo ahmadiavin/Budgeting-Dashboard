@@ -10,7 +10,7 @@ class PurchaseList extends React.Component {
 
   render() {
     let { purchases } = this.props;
-    // console.log(this.props);
+
     return (
       <div className="list-cont">
         {purchases.map(purchase => {

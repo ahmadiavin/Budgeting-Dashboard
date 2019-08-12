@@ -1,26 +1,31 @@
 import React, { Component } from "react";
 import { Doughnut } from "react-chartjs-2";
-<<<<<<< HEAD
-import {FaRegEdit} from 'react-icons/fa'
-import {FaCheck} from 'react-icons/fa'
-=======
->>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
+import { FaRegEdit } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+import {connect} from 'react-redux'
+import {getBudget} from '../../../Redux/expenseReducer'
 
-export default class Chart1 extends Component {
+class Chart1 extends Component {
   constructor() {
     super();
     this.state = {
-      editable: false
+      editable: false,
+      editBudgetInput: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.getBudget()
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
   render() {
+   
     let { purchases, budgetLimit } = this.props;
     purchases = purchases || [];
-<<<<<<< HEAD
-    console.log(purchases, "what is going on with purchases on the chart");
-=======
-    console.log(purchases, "DUDE");
->>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
     const moneySpent = purchases.reduce((total, purchase) => {
       return total + purchase.price;
     }, 0);
@@ -28,29 +33,34 @@ export default class Chart1 extends Component {
       budgetLimit - moneySpent >= 0 ? budgetLimit - moneySpent : 0;
     return (
       <div className="chart1-cont">
-<<<<<<< HEAD
-        <h3>Budget: ${budgetLimit} <button
-          className="editButton"
-          onClick={() => this.setState({ editable: !this.state.editable })}
-        >
-           <FaRegEdit/>
-        </button></h3>
-        
+        <h3>
+          Budget: ${budgetLimit}
+          <button
+            className="editButton"
+            onClick={() => this.setState({ editable: !this.state.editable })}
+          >
+            <FaRegEdit />
+          </button>
+        </h3>
+
         {this.state.editable === true ? (
           <div className="hidden-input">
-            <input type='money' placeholder='Edit your budget'></input><button onClick={() => this.props.editBudget()}><FaCheck/></button>
-=======
-        <h3>Budget: ${budgetLimit}</h3>
-        <button
-          className="editButton"
-          onClick={() => this.setState({ editable: !this.state.editable })}
-        >
-           Edit
-        </button>
-        {this.state.editable === true ? (
-          <div className="hidden-input">
-            <input></input>
->>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
+            <input
+              name="editBudgetInput"
+              type="text"
+              placeholder="Edit your budget"
+              onChange={this.handleChange}
+            />
+            <button
+              onClick={() =>
+                this.props.editBudget(
+                  this.props.username,
+                  this.state.editBudgetInput
+                )
+              }
+            >
+              <FaCheck />
+            </button>
           </div>
         ) : null}
         <Doughnut
@@ -59,8 +69,8 @@ export default class Chart1 extends Component {
             datasets: [
               {
                 data: [moneySpent, remainingBudget],
-                backgroundColor: ["#05eeb4", "#05a4ee"],
-                hoverBackgroundColor: ["#deee05", "#ee0505"],
+                backgroundColor: ["rgb(184, 37, 37)", "rgb(49, 184, 37)"],
+                hoverBackgroundColor: ["rgb(184, 37, 37)", "rgb(49, 184, 37)"],
                 borderColor: ["#b1b1b1"]
               }
             ]
@@ -71,7 +81,4 @@ export default class Chart1 extends Component {
   }
 }
 
-//  background: #05eeb4,
-//  background: #05a4ee,
-//  background: #deee05,
-//  background: #ee0505,
+export default connect(undefined, {getBudget}) (Chart1);
