@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Pie } from "react-chartjs-2";
-import './_piechart.scss'
-class PieChart extends Component {
+import { HorizontalBar } from "react-chartjs-2";
+
+
+class CategoryBox extends Component {
   render() {
     let { purchases } = this.props;
     purchases = purchases || [];
@@ -16,8 +17,8 @@ class PieChart extends Component {
     });
 
     return (
-      <div className='pieDiv'>
-        <Pie
+      <div>
+        <HorizontalBar
           data={{
             labels,
             datasets: [
@@ -34,4 +35,4 @@ class PieChart extends Component {
   }
 }
 
-export default PieChart;
+export default CategoryBox;

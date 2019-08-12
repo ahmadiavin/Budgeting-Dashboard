@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Doughnut } from "react-chartjs-2";
+import {FaRegEdit} from 'react-icons/fa'
+import {FaCheck} from 'react-icons/fa'
 
 export default class Chart1 extends Component {
   constructor() {
@@ -11,7 +13,7 @@ export default class Chart1 extends Component {
   render() {
     let { purchases, budgetLimit } = this.props;
     purchases = purchases || [];
-    console.log(purchases, "DUDE");
+    console.log(purchases, "what is going on with purchases on the chart");
     const moneySpent = purchases.reduce((total, purchase) => {
       return total + purchase.price;
     }, 0);
@@ -19,16 +21,16 @@ export default class Chart1 extends Component {
       budgetLimit - moneySpent >= 0 ? budgetLimit - moneySpent : 0;
     return (
       <div className="chart1-cont">
-        <h3>Budget: ${budgetLimit}</h3>
-        <button
+        <h3>Budget: ${budgetLimit} <button
           className="editButton"
           onClick={() => this.setState({ editable: !this.state.editable })}
         >
-           Edit
-        </button>
+           <FaRegEdit/>
+        </button></h3>
+        
         {this.state.editable === true ? (
           <div className="hidden-input">
-            <input></input>
+            <input type='money' placeholder='Edit your budget'></input><button onClick={() => this.props.editBudget()}><FaCheck/></button>
           </div>
         ) : null}
         <Doughnut

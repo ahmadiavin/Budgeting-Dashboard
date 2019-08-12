@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import {updateEmail, updateUsername} from "../../Redux/auth/authReducer";
 import "./_register.scss";
 import { FaLock } from "react-icons/fa";
+import Background from '../Loading/Background'
 
 class Register extends Component {
   constructor() {
@@ -54,6 +55,7 @@ class Register extends Component {
       return <Redirect to="/overview" />;
     }
     return (
+      <Background>
       <div className="register-cont">
         <section>
           <div className="register-header">
@@ -103,6 +105,7 @@ class Register extends Component {
         ) : null}
         </div>
       </div>
+      </Background>
     );
   }
 }

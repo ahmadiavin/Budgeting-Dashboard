@@ -10,6 +10,10 @@ import {
 import { updateEmail, updateUsername } from "../../Redux/auth/authReducer";
 import "./_overview.scss";
 import PieChart from "./Charts/PieChart";
+import CategoryBox from "./Charts/CategoryBox";
+import Loading from '../Loading/Loading'
+import Background from '../Loading/Background'
+
 class Overview extends Component {
   render() {
     if (this.props.auth.username === "") {
@@ -18,18 +22,25 @@ class Overview extends Component {
     const { purchases } = this.props.expense;
 
     return (
+      <Background>
+      {this.props.budget === true ? <Loading /> : null}
       <div className="mainview">
         <header className="overviewHeader">
-          <h3>All transactions</h3>
+          <h3>Budgeting Dashboard</h3>
         </header>
         <div className="sideview">
           <h5>Welcome {this.props.auth.username}</h5>
           <h5> Email: {this.props.auth.email}</h5>
         </div>
         <br />
-
+        <div className="charts">
+            <CategoryBox purchases={purchases} />
+            <PieChart purchases={purchases} />
+            <h4>All Transactions</h4>
+          </div>
+          
         <div className="addPurchase">
-          <PieChart purchases={purchases} />
+          
           <AddPurchase
             removePurchase={this.props.removePurchase}
             addPurchase={this.props.addPurchase}
@@ -37,6 +48,7 @@ class Overview extends Component {
           />
         </div>
       </div>
+      </Background>
     );
   }
 }

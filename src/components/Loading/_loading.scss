@@ -1,0 +1,85 @@
+@import "../../App.scss";
+
+.background {
+  transition: margin-left, 0.5s, ease-out;
+
+  margin-left: 0 !important;
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+
+    .spinner {
+      display: block;
+      margin: 20px auto;
+      width: 175px;
+      height: 175px;
+      animation: spin 20s linear 0s infinite;
+      transform-origin: 50% 50%;
+      svg {
+        margin: 0;
+        padding: 0;
+      }
+      .cp1 {
+        animation: opacity 1.2s ease-in-out 0s infinite;
+      }
+      .cp2 {
+        animation: opacity 1.2s ease-in-out 0.12s infinite;
+      }
+      .cp3 {
+        animation: opacity 1.2s ease-in-out 0.24s infinite;
+      }
+      .cp4 {
+        animation: opacity 1.2s ease-in-out 0.36s infinite;
+      }
+      .cp5 {
+        animation: opacity 1.2s ease-in-out 0.48s infinite;
+      }
+      .cp6 {
+        animation: opacity 1.2s ease-in-out 0.6s infinite;
+      }
+
+      .cp7 {
+        animation: opacity 1.2s ease-in-out 0.72s infinite;
+      }
+
+      .cp8 {
+        animation: opacity 1.2s ease-in-out 0.84s infinite;
+      }
+      .cp9 {
+        animation: opacity 1.2s ease-in-out 0.96s infinite;
+      }
+
+      .cp10 {
+        animation: opacity 1.2s ease-in-out 1.08s infinite;
+        
+      }
+    }
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes opacity { from { opacity:0; } to { opacity:1; } }

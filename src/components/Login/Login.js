@@ -5,6 +5,7 @@ import { FaLock } from "react-icons/fa";
 import Axios from "axios";
 import { connect } from "react-redux";
 import { updateEmail, updateUsername } from "../../Redux/auth/authReducer";
+import Background from '../Loading/Background'
 
 class Login extends React.Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class Login extends React.Component {
       return <Redirect to="/overview" />;
     }
     return (
+      <Background>
       <div className="login-cont">
         <section>
           <h2>Please Login</h2>
@@ -81,6 +83,7 @@ class Login extends React.Component {
           </p>
         </section>
       </div>
+      </Background>
     );
   }
 }

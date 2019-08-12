@@ -14,7 +14,7 @@ class Budget extends Component {
 
     return (
       <div className="budget-cont">
-        <Chart1 purchases={purchases} budgetLimit={budgetLimit} />
+        <Chart1 editBudget={editBudget} purchases={purchases} budgetLimit={budgetLimit} />
         <Chart2 purchases={purchases} budgetLimit={budgetLimit} />
       </div>
     );
