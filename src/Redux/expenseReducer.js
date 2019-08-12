@@ -1,8 +1,12 @@
 import axios from "axios";
 const initialState = {
   purchases: [],
+<<<<<<< HEAD
   budgetLimit:[],
   loading: false
+=======
+  budgetLimit:1000
+>>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
 };
 const GET_EXPENSES = "GET_EXPENSES";
 const ADD_PURCHASE = "ADD_PURCHASE";

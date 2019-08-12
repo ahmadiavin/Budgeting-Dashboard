@@ -4,16 +4,30 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+<<<<<<< HEAD
 
   align-items: center;
   position: absolute;
   bottom: 0;
 
   background: #f7f7f7;
+=======
+  
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  
+  background: $bgcolor;
+>>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
   color: #666666;
   font-size: 12px;
   width: 100vw;
   height: 8vh;
+<<<<<<< HEAD
+=======
+ 
+  
+>>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
 
   ul {
     list-style: none;

@@ -43,6 +43,20 @@ class AddPurchase extends Component {
 
     return (
       <table>
+<<<<<<< HEAD
+=======
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+         <PurchaseList removePurchase={this.props.removePurchase}
+          
+          purchases={purchases}/>  
+>>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
         <tfoot className="tfoot-cont">
           <tr>
             <td>

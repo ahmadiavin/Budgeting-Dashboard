@@ -4,13 +4,20 @@ import Register from './components/Register/Register'
 import Login from './components/Login/Login'
 import Overview from './components/Overview/Overview'
 import Budget from './components/Budget/Budget';
+<<<<<<< HEAD
 import Profile from './components/Profile/Profile'
+=======
+
+>>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
 export default (
     <Switch>
         <Route exact path='/' component={Login}/>
         <Route path='/register' component={Register}/>
         <Route path='/overview' component={Overview}/>
+<<<<<<< HEAD
         <Route path='/profile' component={Profile}/>
+=======
+>>>>>>> 5ad182433139c3fdfb533054e87894cfb1b49bad
         <Route path='/budget' component={Budget}/>
         <Route path='/' render={() => <h1>404 Page not found.</h1>} />
 
