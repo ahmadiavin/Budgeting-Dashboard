@@ -26,7 +26,7 @@ class Overview extends Component {
         {this.props.expense.loading  ? <Loading /> : null}
         <div className="mainview">
           <header className="overviewHeader">
-            <h3>Budgeting Dashboard</h3>
+            <h3>Expenditures</h3>
           </header>
           <div className="sideview">
             <h5>Welcome {this.props.auth.username}</h5>

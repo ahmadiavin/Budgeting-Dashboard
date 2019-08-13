@@ -42,7 +42,8 @@ class AddPurchase extends Component {
 
     return (
       <table>
-        <tfoot className="tfoot-cont">
+     
+        <thead className="tfoot-cont">
           <tr>
             <td>
               <form>
@@ -94,7 +95,7 @@ class AddPurchase extends Component {
               </form>
             </td>
           </tr>
-        </tfoot>
+        </thead>
         <thead>
           <tr>
             <th>Category</th>
@@ -103,6 +104,7 @@ class AddPurchase extends Component {
             <th>Date</th>
           </tr>
         </thead>
+       
         <PurchaseList
           removePurchase={this.props.removePurchase}
           purchases={purchases}

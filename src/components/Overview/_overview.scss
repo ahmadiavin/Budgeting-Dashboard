@@ -1,6 +1,12 @@
 @import "../../App.scss";
 
 .mainview {
+  // display: flex;
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   align-items: center;
+  
   header {
     background: #f7f7f7;
     color: #000;
@@ -27,10 +33,15 @@
     box-shadow: -12px 0 20px -12px rgba(0, 0, 0, 0.1) inset;
   }
   .tableBox {
-    margin-left: 20%;
+  margin-left: 10%;
+   padding: 1%;
+  width: 50vw;
+  height: 50vh;
+  border-bottom: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .charts {
     justify-content: space-around;

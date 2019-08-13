@@ -41,16 +41,19 @@ class Budget extends Component {
       <Background>
         {this.props.expense.loading ? <Loading /> : null}
         <div className="budget-cont">
-          <h3>
-            Budget: ${budgetLimit}
-            <button
-              className="editButton"
-              onClick={() => this.setState({ editable: !this.state.editable })}
-            >
-              <FaRegEdit />
-            </button>
-          </h3>
-
+          <header>
+            <h3>
+              Budget: ${budgetLimit}
+              <button
+                className="editButton"
+                onClick={() =>
+                  this.setState({ editable: !this.state.editable })
+                }
+              >
+                <FaRegEdit />
+              </button>
+            </h3>
+          </header>
           {this.state.editable === true ? (
             <div className="hidden-input">
               <input
@@ -71,15 +74,19 @@ class Budget extends Component {
               </button>
             </div>
           ) : null}
-          <Chart1
-            editBudget={editBudget}
-            purchases={purchases}
-            budgetLimit={budgetLimit}
-            username={username}
-            getBudget={getBudget}
-          />
-          <Chart2 purchases={purchases} budgetLimit={budgetLimit} />
-          <BarChart purchases={purchases} />
+           <div className='sideBudget'></div>
+          <div className="charts">
+           
+            <Chart1
+              editBudget={editBudget}
+              purchases={purchases}
+              budgetLimit={budgetLimit}
+              username={username}
+              getBudget={getBudget}
+            />
+            <Chart2 purchases={purchases} budgetLimit={budgetLimit} />
+            <BarChart purchases={purchases} />
+          </div>
         </div>
       </Background>
     );
