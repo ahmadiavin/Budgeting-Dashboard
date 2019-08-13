@@ -23,7 +23,7 @@ class Overview extends Component {
 
     return (
       <Background>
-        {this.props.expense === true ? <Loading /> : null}
+        {this.props.expense.loading  ? <Loading /> : null}
         <div className="mainview">
           <header className="overviewHeader">
             <h3>Budgeting Dashboard</h3>

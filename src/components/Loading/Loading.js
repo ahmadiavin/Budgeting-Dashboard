@@ -7,7 +7,8 @@ class Loading extends Component {
         <div className="wrapper">
           
             <div className="spinner">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+             
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"> 
                 <g id="mintSpinnerLayer_2" data-name="mintSpinnerLayer 2">
                   <g id="mintSpinnerLayer_1-2" data-name="mintSpinnerLayer 1">
                     <path
@@ -30,6 +31,7 @@ class Loading extends Component {
                       className="cp9"
                       d="M10.39,56.63l-5.24,3A40.31,40.31,0,0,0,19.71,74.48l3-5.24A34.21,34.21,0,0,1,10.39,56.63Z"
                     />
+                 
                     <path
                       fill="#f54662"
                       className="cp6"
@@ -63,8 +65,9 @@ class Loading extends Component {
                   </g>
                 </g>
               </svg>
+              
             </div>
-         
+            <p>Loading...</p>
         </div>
       </div>
     );
