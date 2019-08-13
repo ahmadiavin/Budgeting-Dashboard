@@ -1,7 +1,16 @@
 @import '../../App.scss';
 
-.budget-cont {
-display: flex;
 
-width: 50vw;
-}
+.budget-cont {
+    display: flex;
+    align-items: center;
+    height: 50vh;
+  
+    .hidden {
+      margin: 0 auto;
+      width: 60%;
+      border: 1px solid #e74c3c;
+      background: #fafbfc;
+    }
+  }
+  

@@ -17,14 +17,12 @@ class Budget extends Component {
     this.state = {
       editable: false,
       editBudgetInput: ""
-     
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
-    this.props.editBudget();
-    
+    this.props.getBudget();
   }
 
   handleChange(e) {
@@ -32,13 +30,13 @@ class Budget extends Component {
   }
 
   render() {
-    
     if (this.props.auth.username === "") {
       return <Redirect to="/" />;
     }
 
     const { purchases, budgetLimit } = this.props.expense;
     const { username } = this.props.auth;
+
     return (
       <Background>
         {this.props.expense.loading ? <Loading /> : null}
@@ -64,7 +62,7 @@ class Budget extends Component {
               <button
                 onClick={() =>
                   this.props.editBudget(
-                    this.props.username,
+                    this.props.auth.username,
                     this.state.editBudgetInput
                   )
                 }

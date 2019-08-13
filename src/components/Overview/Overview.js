@@ -40,17 +40,19 @@ class Overview extends Component {
           </div>
           <br />
 
-          {/* <div className="addPurchase"> */}
+          <div className="tableBox">
             
             <AddPurchase
               removePurchase={this.props.removePurchase}
               addPurchase={this.props.addPurchase}
               purchases={purchases}
             />
-          {/* </div> */}
-          <br/>
+          </div>
+         
         </div>
+       
       </Background>
+      
     );
   }
 }

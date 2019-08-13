@@ -14,13 +14,15 @@ export default class Chart2 extends Component {
       <div className="chart1-cont">
         <Bar
           data={{
-            labels: ["Inflow", "Outflow"],
+            labels: [ "Outflow", "Inflow"],
             datasets: [
               {
+                label: "Total Expenditure",
                 data: [moneySpent, remainingBudget],
                 backgroundColor: ["rgb(184, 37, 37)", "rgb(49, 184, 37)"],
                 hoverBackgroundColor: [],
-                borderColor: ["#b1b1b1"]
+                borderColor: ["#b1b1b1"],
+                borderWidth: 1,
               }
             ]
           }}

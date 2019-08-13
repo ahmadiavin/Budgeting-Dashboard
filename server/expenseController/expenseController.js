@@ -37,9 +37,8 @@ module.exports = {
   edit: async function(req, res) {
     const { username } = req.params;
     const { newBudget } = req.body;
-    console.log(req.body);
-
-    await req.app.get("db").changeBudget([newBudget, username]);
-    return res.sendStatus(200);
+   
+    const editedBudget = await req.app.get("db").changeBudget([newBudget, username]);
+    return res.status(200).send(editedBudget[0]);
   }
 };

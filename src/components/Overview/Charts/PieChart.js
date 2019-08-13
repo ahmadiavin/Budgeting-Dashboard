@@ -24,7 +24,7 @@ class PieChart extends Component {
               {
                 data: amtSpentByCategory,
                 backgroundColor: [" #61c9aa", "#a36fa6", "#d67d67", "#dea65b","#5391ba"],
-                hoverBackgroundColor: ["#f7f7f779"]
+                hoverBackgroundColor: ["#1fc291"]
               }
             ]
           }}

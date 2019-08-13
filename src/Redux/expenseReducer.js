@@ -41,7 +41,7 @@ export function getBudget() {
 }
 
 export function editBudget(username, newBudget) {
-  console.log(newBudget, "this is newBudget");
+  // console.log(newBudget, "44")
   return {
     type: EDIT_BUDGET,
     payload: axios
@@ -59,6 +59,7 @@ export function clearExpenses() {
 }
 
 export default function expenseReducer(state = initialState, action) {
+  // console.log(action)
   switch (action.type) {
     case `${GET_EXPENSES}_PENDING`:
       return {
@@ -101,7 +102,7 @@ export default function expenseReducer(state = initialState, action) {
     case `${GET_BUDGET}_FULFILLED`:
       return {
         ...state,
-        budgetLimit: action.payload,
+        budgetLimit: action.payload[0].budget,
         loading: false
       };
     case `${EDIT_BUDGET}_PENDING`:
@@ -112,7 +113,7 @@ export default function expenseReducer(state = initialState, action) {
     case `${EDIT_BUDGET}_FULFILLED`:
       return {
         ...state,
-        budgetLimit: action.payload,
+        budgetLimit: action.payload.budget,
         loading: false
       };
     case CLEAR_EXPENSES:
@@ -123,3 +124,6 @@ export default function expenseReducer(state = initialState, action) {
       return state;
   }
 }
+
+
+// 

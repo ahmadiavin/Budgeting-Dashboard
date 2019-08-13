@@ -23,9 +23,10 @@ class BarChart extends Component {
             labels,
             datasets: [
               {
+                label: "Expenses by Category",
                 data: amtSpentByCategory,
                 backgroundColor: [" #61c9aa", "#a36fa6", "#d67d67", "#dea65b","#5391ba"],
-                hoverBackgroundColor: ["#grey"]
+                hoverBackgroundColor: ["#1fc291"]
               }
             ]
           }}
