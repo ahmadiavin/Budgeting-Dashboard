@@ -41,75 +41,68 @@ class AddPurchase extends Component {
     const { purchases } = this.props;
 
     return (
-      <table>
-     
-        <thead className="tfoot-cont">
-          <tr>
-            <td>
-              <form>
-                <div className="tf-category">
-                  <select
-                    value={category}
-                    onChange={e => this.setState({ category: e.target.value })}
-                  >
-                    <option defaultValue="Misc" value="Misc">
-                      Misc
-                    </option>
-                    <option value="Travel">Travel</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Food">Food</option>
-                    <option value="Gas">Gas</option>
-                    <option value="Entertainment">Entertainment</option>
-                  </select>
-                </div>
-                <div className="tf-description">
-                  <input
-                    value={description}
-                    onChange={e =>
-                      this.setState({ description: e.target.value })
-                    }
-                    placeholder="Description"
-                    type="text"
-                  />
-                </div>
-                <div className="tf-price">
-                  <input
-                    placeholder="Price"
-                    min={1}
-                    value={price}
-                    type="number"
-                    onChange={e => this.setState({ price: e.target.value })}
-                  />
-                </div>
-                <div className="tf-date">
-                  <input
-                    type="date"
-                    value={date}
-                    onChange={e => this.setState({ date: e.target.value })}
-                    placeholder="Date"
-                  />
-                </div>
-                <div>
-                  <button onClick={e => this.add(e)}>Add</button>
-                </div>
-              </form>
-            </td>
-          </tr>
-        </thead>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-       
-        <PurchaseList
-          removePurchase={this.props.removePurchase}
-          purchases={purchases}
-        />
-      </table>
+      <div className="listContainer">
+        <form>
+          <div className="tf-category">
+            <select
+              value={category}
+              onChange={e => this.setState({ category: e.target.value })}
+            >
+              <option defaultValue="Misc" value="Misc">
+                Misc
+              </option>
+              <option value="Travel">Travel</option>
+              <option value="Rent">Rent</option>
+              <option value="Food">Food</option>
+              <option value="Gas">Gas</option>
+              <option value="Entertainment">Entertainment</option>
+            </select>
+          </div>
+          <div className="tf-description">
+            <input
+              value={description}
+              onChange={e => this.setState({ description: e.target.value })}
+              placeholder="Description"
+              type="text"
+            />
+          </div>
+          <div className="tf-price">
+            <input
+              placeholder="Price"
+              min={1}
+              value={price}
+              type="number"
+              onChange={e => this.setState({ price: e.target.value })}
+            />
+          </div>
+          <div className="tf-date">
+            <input
+              type="date"
+              value={date}
+              onChange={e => this.setState({ date: e.target.value })}
+              placeholder="Date"
+            />
+          </div>
+          <div>
+            <button onClick={e => this.add(e)}>Add</button>
+          </div>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+
+          <PurchaseList
+            removePurchase={this.props.removePurchase}
+            purchases={purchases}
+          />
+        </table>
+      </div>
     );
   }
 }
@@ -122,3 +115,11 @@ export default connect(
   mapStateToProps,
   { removePurchase, getExpenses }
 )(AddPurchase);
+
+/*   <thead className="tfoot-cont">
+<tr>
+<td>
+  
+</td>
+</tr>
+</thead> */

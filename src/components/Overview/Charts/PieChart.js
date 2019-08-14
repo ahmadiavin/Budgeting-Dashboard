@@ -18,6 +18,7 @@ class PieChart extends Component {
     return (
       <div className='pieDiv'>
         <Pie
+          options={{ maintainAspectRatio: false }}
           data={{
             labels,
             datasets: [

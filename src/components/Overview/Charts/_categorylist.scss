@@ -1,5 +1,9 @@
 @import "../../../App.scss";
-
+h3 {
+  font-size: 16px;
+  font-family: $font-family;
+  font-weight: 600;
+}
 .legend {
    
   //   width: 15vw;
@@ -16,57 +20,64 @@
   background: -webkit-linear-gradient(top, #fff, #f7f7f7);
   p {
     font-family: $font-family;
-
+    margin-bottom: 1%;
     font-size: 12px;
+    padding: 1px;
   }
   li {
+    
     flex-wrap: wrap;
-    padding: 1px;
+    padding: 2px;
     .color1 {
+      padding: 1px;
       background: #61c9aa;
       float: left;
       width: 10px;
       height: 10px;
-      margin: 5px;
+      // margin: 5px;
       margin-right: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .color2 {
+      padding: 1px;
       background: #a36fa6;
       float: left;
       width: 10px;
       height: 10px;
-      margin: 5px;
+      // margin: 5px;
       margin-right: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .color3 {
+      padding: 1px;
       background: #d67d67;
 
       float: left;
       width: 10px;
       height: 10px;
-      margin: 5px;
+      // margin: 5px;
       margin-right: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .color4 {
+      padding: 1px;
       background: #dea65b;
       float: left;
       width: 10px;
       height: 10px;
-      margin: 5px;
+      // margin: 5px;
       margin-right: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .color5 {
+      padding: 1px;
       background: #5391ba;
       float: left;
       width: 10px;
       height: 10px;
-      margin: 5px;
+      // margin: 5px;
       margin-right: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .category {
       font-weight: 600;

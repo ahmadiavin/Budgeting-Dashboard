@@ -1,0 +1,24 @@
+@import "../../../App.scss";
+.bootStrapTable{
+  
+  margin-top: 3%;
+  display: flex;
+ justify-content: center;
+ table {
+  border: 1px solid #ccc;
+  
+ }
+  .sorting {
+    color: red;
+  }
+
+  .sort-desc {
+    color: chartreuse;
+  }
+
+  .sort-asc {
+    color: orange;
+  }
+
+
+}

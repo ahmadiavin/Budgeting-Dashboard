@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Doughnut } from "react-chartjs-2";
-
 import { connect } from "react-redux";
 import { getBudget } from "../../../Redux/expenseReducer";
-
+import './_chart1.scss'
 class Chart1 extends Component {
   render() {
     let { purchases, budgetLimit } = this.props;

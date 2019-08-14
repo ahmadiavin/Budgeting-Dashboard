@@ -1,7 +1,9 @@
 @import "../../../App.scss";
 .list-cont {
+  flex-wrap: wrap;
+    display: flex;
   table {
-    // display: flex;
+    
     // clear: both;
     // font-size: 12px;
     // margin-left: 0;
@@ -22,7 +24,7 @@
 
     tbody {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       border-top: 1px solid #b1b1b1;
       background-color: #f0f0f0;
       vertical-align: baseline;

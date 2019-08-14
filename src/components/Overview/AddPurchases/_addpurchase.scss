@@ -35,6 +35,7 @@ table {
 
     // vertical-align: middle;
     display: flex;
+    flex-wrap: wrap;
     vertical-align: middle;
     border-color: inherit;
     border-bottom: 1px solid #ddd;
@@ -42,6 +43,11 @@ table {
     background: -webkit-linear-gradient(top, #fff, #e8e8e8);
     height: 31px;
     line-height: 28px;
+    border: 1px solid #ddd;
+    border-collapse: separate;
+
+    font-size: 12px;
+
     // padding: 2px 4px;
 
     tr {
@@ -49,7 +55,12 @@ table {
       width: 100%;
       -webkit-box-align: stretch;
       align-items: stretch;
-
+      display: flex;
+      width: 100%;
+      -webkit-box-align: stretch;
+      align-items: stretch;
+      height: inherit;
+      padding: 2px !important;
       // padding: 8px;
       -webkit-border-horizontal-spacing: 1.6px;
       -webkit-border-vertical-spacing: 1.6px;
@@ -65,91 +76,76 @@ table {
       }
     }
   }
+}
 
-  thead {
-    border: 1px solid #ddd;
-    border-collapse: separate;
-
-    font-size: 12px;
-
-    tr {
-      display: flex;
-      width: 100%;
-      -webkit-box-align: stretch;
-      align-items: stretch;
-      height: inherit;
-      padding: 2px !important;
-      td {
-        -webkit-box-flex: 1;
-        flex: 1;
-        min-width: 120px;
-        text-align: right;
-
-        display: flex;
-
-        form {
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          text-align: right;
-          justify-content: space-between;
-          div {
-            // display: flex;
-            button {
-              background-color: $bgcolor;
-              color: #fff;
-              margin-left: 5px;
-              text-transform: uppercase;
-              text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-              border-radius: 4px;
-              padding: 0.5em 1em;
-              text-decoration: none;
-              border: transparent;
-              cursor: pointer;
-              height: 35px;
-            }
-            input {
-              -webkit-box-flex: 1;
-              flex: 1;
-              min-width: 50px;
-              height: 100%;
-              font-size: 1.1em;
-              padding: 0.5em 0.6em;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-shadow: inset 0 1px 3px rgba(50, 50, 50, 0.16);
-              border-radius: 4px;
-              vertical-align: middle;
-              box-sizing: border-box;
-            }
-            button {
-              color: #fff;
-              background: #45cae6;
-              padding: 7px 8px 6px 5px;
-              min-width: 65px;
-              font-size: 11px;
-              border-radius: 3px;
-              text-transform: uppercase;
-              text-align: center;
-              cursor: pointer;
-            }
-            select {
-              -webkit-box-flex: 1;
-              flex: 1;
-              min-width: 50px;
-              height: 100%;
-              font-size: 1.1em;
-              padding: 0.5em 0.6em;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-shadow: inset 0 1px 3px rgba(50, 50, 50, 0.16);
-              border-radius: 4px;
-              vertical-align: middle;
-              box-sizing: border-box;
-            }
-          }
-        }
-      }
-    }
+form {
+  
+  margin-left: 5%;
+  width: 60vw;
+  flex: 1 1;
+  border-collapse: collapse;
+  font-size: 0.8em;
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: right;
+  justify-content: space-between;
+  .tf-category{
+   
   }
+  
+    button {
+      background-color: $bgcolor;
+      color: #fff;
+      margin-left: 5px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      border: transparent;
+      cursor: pointer;
+      height: 35px;
+    }
+    input {
+      -webkit-box-flex: 1;
+      flex: 1;
+      min-width: 50px;
+      height: 100%;
+      font-size: 1.1em;
+      padding: 0.5em 0.6em;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-shadow: inset 0 1px 3px rgba(50, 50, 50, 0.16);
+      border-radius: 4px;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+    button {
+      color: #fff;
+      background: #45cae6;
+      padding: 7px 8px 6px 5px;
+      min-width: 65px;
+      font-size: 11px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+    }
+    select {
+      -webkit-box-flex: 1;
+      flex: 1;
+      min-width: 50px;
+      height: 100%;
+      font-size: 1.1em;
+      padding: 0.5em 0.6em;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-shadow: inset 0 1px 3px rgba(50, 50, 50, 0.16);
+      border-radius: 4px;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+   
+  
 }

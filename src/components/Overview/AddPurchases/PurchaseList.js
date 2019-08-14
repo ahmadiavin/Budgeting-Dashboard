@@ -18,7 +18,7 @@ class PurchaseList extends React.Component {
             <table>
               <tbody>
                 <tr key={purchases.id}>
-                  <td>{purchase.category}</td>
+                  <td >{purchase.category}</td>
                   <td>{purchase.description}</td>
                   <td>{purchase.price}</td>
                   <td>{purchase.date}</td>

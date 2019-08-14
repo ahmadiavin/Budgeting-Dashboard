@@ -14,6 +14,7 @@ import Loading from "../Loading/Loading";
 import Background from "../Loading/Background";
 import CategoryList from "./Charts/CategoryList";
 
+
 class Overview extends Component {
   render() {
     if (this.props.auth.username === "") {
@@ -29,8 +30,12 @@ class Overview extends Component {
             <h3>Expenditures</h3>
           </header>
           <div className="sideview">
-            <h5>Welcome {this.props.auth.username}</h5>
-            <h5> Email: {this.props.auth.email}</h5>
+           
+              <h5>Account</h5>
+              <h6>Welcome {this.props.auth.username} username</h6>
+            <p> {this.props.auth.email} is securely logged in.</p>
+            
+            
           </div>
           <br />
           <div className="charts">
@@ -50,6 +55,7 @@ class Overview extends Component {
           </div>
          
         </div>
+       
        
       </Background>
       

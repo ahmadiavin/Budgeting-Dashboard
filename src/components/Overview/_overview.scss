@@ -6,8 +6,9 @@
   //   flex-wrap: wrap;
   //   justify-content: space-between;
   //   align-items: center;
-  
-  header {
+  //   overflow: visible;
+
+  .overviewHeader {
     background: #f7f7f7;
     color: #000;
 
@@ -23,21 +24,41 @@
     }
   }
   .sideview {
-    min-height: 50vh;
-    margin-left: 5%;
+    min-height: 46vh;
+    margin-left: 2%;
     float: left;
+    letter-spacing: 0;
 
-    width: 8vw;
-    border-right: 1px solid #ccc;
+    width: 15vw;
+    // border-right: 1px solid #ccc;
     background: none !important;
     box-shadow: -12px 0 20px -12px rgba(0, 0, 0, 0.1) inset;
+    p {
+      font-family: $font-family;
+
+      font-size: 12px;
+    }
+    h5 {
+      font-family: "AvenirNext-Medium-Mint", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+      border-bottom: 4px solid #ccc;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    h6 {
+      font-size: 16px;
+      font-family: $font-family;
+      font-weight: 600;
+    }
   }
   .tableBox {
-  margin-left: 10%;
-   padding: 1%;
-  width: 50vw;
-  height: 50vh;
-  border-bottom: 1px solid #ccc;
+    margin-top: 1.5%;
+    // margin-left: 10%;
+    margin-bottom: 1%;
+    padding: 1%;
+    // width: 50vw;
+    // height: 50vh;
+    border-top: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,6 +69,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-right: 10%;
 
     h4 {
     }
