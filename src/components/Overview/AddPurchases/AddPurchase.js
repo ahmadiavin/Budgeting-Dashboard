@@ -48,8 +48,8 @@ class AddPurchase extends Component {
               value={category}
               onChange={e => this.setState({ category: e.target.value })}
             >
-              <option defaultValue="Misc" value="Misc">
-                Misc
+              <option defaultValue="Category" value="Category">
+                Category
               </option>
               <option value="Travel">Travel</option>
               <option value="Rent">Rent</option>

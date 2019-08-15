@@ -1,0 +1,97 @@
+@import "../../App.scss";
+.container {
+  background: #f7f7f7;
+  overflow: hidden;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  .profile-header {
+    background: #f7f7f7;
+    color: #000;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    h3 {
+      font-size: 16px;
+      font-family: $font-family;
+      font-weight: 600;
+    }
+  }
+}
+.modal-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  // padding: 1%;
+  border: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  background: white;
+  // margin: 33px 36px 0 36px;
+  h1 {
+    padding: 1%;
+    width: 400px;
+    font-size: 30px;
+    font-weight: 300;
+    background: #ccc;
+  }
+  p {
+    padding: 1%;
+    margin: 5px 0 36px 1px;
+    color: #666666;
+    font-size: 13px;
+  }
+  h2 {
+    color: #999999;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  fieldset {
+    float: left;
+    width: 520px;
+    ul {
+      list-style: none;
+      label {
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+        float: left;
+
+        font-weight: 600;
+      }
+    }
+    input {
+      margin: 0 0 20px 0;
+      border-radius: 3px;
+      background: #fff;
+      border: 1px solid #d8d8d8;
+      padding: 8px;
+      width: 300px;
+      color: black;
+      font-size: 14px;
+      label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  img {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    float: right;
+  }
+
+  .picture {
+    margin: 0 30px 0 0;
+    font-weight: 600;
+  }
+}

@@ -32,7 +32,7 @@ class Overview extends Component {
           <div className="sideview">
            
               <h5>Account</h5>
-              <h6>Welcome {this.props.auth.username} username</h6>
+              <h6>Welcome {this.props.auth.username}.</h6>
             <p> {this.props.auth.email} is securely logged in.</p>
             
             

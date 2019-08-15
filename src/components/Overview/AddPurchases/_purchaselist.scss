@@ -1,26 +1,18 @@
 @import "../../../App.scss";
 .list-cont {
   flex-wrap: wrap;
-    display: flex;
+  display: flex;
+
   table {
-    
-    // clear: both;
-    // font-size: 12px;
-    // margin-left: 0;
-    // border-bottom: 1px solid #ddd;
-    // border-collapse: separate;
-    // border-left: 1px solid #ddd;
-    // width: 620px;
-    // vertical-align: middle;
-    // border-spacing: 1;
+ 
+    border-spacing: 1;
     border: 1px solid #ddd;
     border-collapse: separate;
-    // width: 650px;
+    
     font-size: 12px;
     margin-left: 0;
     vertical-align: middle;
     text-align: left;
-   
 
     tbody {
       display: flex;
@@ -39,7 +31,7 @@
         font-size: 1.8em;
         display: flex;
         width: 100%;
-        
+
         align-items: stretch;
         height: inherit;
         padding: 2px !important;
@@ -48,14 +40,14 @@
           border-radius: 0.5px;
           background: #c9caca;
         }
-        
+
         td {
           border-top: 1px solid #dbdad8;
-          
+
           flex: 1;
           min-width: 120px;
           text-align: right;
-         
+
           display: flex;
           flex-wrap: nowrap;
           text-transform: uppercase;

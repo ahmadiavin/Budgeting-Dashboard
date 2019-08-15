@@ -1,24 +1,21 @@
-
 @import "../../App.scss";
 
 .nav-cont {
   display: flex;
   flex-direction: row;
-  
+
   justify-content: space-between;
   background: $bgcolor;
   height: 10vh;
-  width: 100vw;
+  max-width: 100vw;
   .nav-logo {
     background-image: url(https://images.mint.com/web-client/images/logo/logo2018/logo_white.svg);
     width: 81px;
     height: 30px;
     margin-top: 13px;
     &:hover {
-        
-        cursor: pointer;
-        
-      }
+      cursor: pointer;
+    }
   }
 
   ul {
@@ -28,27 +25,21 @@
 
     align-items: space-between;
     align-content: center;
-   
   }
 
   li {
+   
     &:hover {
-        transition: all 0.2s ease;
-        margin: 1px;
-       
-        
-        
-      }
+      transition: all 0.2s ease;
+      margin: 1px;
+    }
   }
 
   a {
-    
     &:hover {
-        
-        
       color: white;
     }
-    
+
     justify-content: center;
     text-decoration: none;
     text-align: center;
@@ -60,4 +51,3 @@
     text-transform: uppercase;
   }
 }
-

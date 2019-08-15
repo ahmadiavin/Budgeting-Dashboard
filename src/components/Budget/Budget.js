@@ -10,7 +10,8 @@ import BarChart from "../Overview/Charts/BarChart";
 import "./_budget.scss";
 import Loading from "../Loading/Loading";
 import Background from "../Loading/Background";
-import BSTable from './BSTable/BSTable'
+import BSTable from "./BSTable/BSTable";
+
 class Budget extends Component {
   constructor() {
     super();
@@ -74,9 +75,9 @@ class Budget extends Component {
               </button>
             </div>
           ) : null}
-           {/* <div className='sideBudget'></div> */}
+          {/* <div className='sideBudget'></div> */}
+
           <div className="charts">
-           
             <Chart1
               editBudget={editBudget}
               purchases={purchases}
@@ -89,7 +90,6 @@ class Budget extends Component {
           </div>
           <BSTable purchases={purchases} />
         </div>
-      
       </Background>
     );
   }

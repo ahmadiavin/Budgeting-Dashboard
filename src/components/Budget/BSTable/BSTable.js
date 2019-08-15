@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getExpenses } from "../../../Redux/expenseReducer";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import './_bstable.scss'
-// import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+// import '../../../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css'
 
 class BSTable extends React.Component {
   componentDidMount() {

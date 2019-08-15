@@ -1,6 +1,7 @@
 @import "../../App.scss";
 
 .register-cont {
+  margin-bottom: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,6 +77,7 @@
   }
 
   .bad-login {
+    
       text-align: center;
       margin-bottom: 20%;
       margin-left: 20%;

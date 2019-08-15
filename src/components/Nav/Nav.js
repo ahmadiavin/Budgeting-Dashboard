@@ -53,3 +53,13 @@ class Nav extends React.Component {
 }
 
 export default connect(undefined, {logoutUser,clearExpenses})(Nav);
+
+// micro modal for profile maybe later
+/* <MicroModal
+trigger={handleOpen => <a onClick={handleOpen}>Profile</a>}
+children={handleClose => (
+  <div className='modal' style={styles}>
+    <button onClick={handleClose} />
+  </div>
+)}
+/> */
