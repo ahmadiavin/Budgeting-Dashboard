@@ -16,19 +16,28 @@ class BSTable extends React.Component {
     return 'sort-asc';
   }
 
+  
+
   render() {
     let { purchases } = this.props;
 
-
+    const options = {
+      clearSearch: true,
+      searchField: this.createCustomSearchField
+    };
 
     return (
       <div className="bootStrapTable">
-        <BootstrapTable  data={ purchases }>
+        {/* <SearchField
+        className='my-custom-class'
+        defaultValue={ purchases.defaultSearch }
+        placeholder={ purchases.searchPlaceholder }/> */}
+        <BootstrapTable width='15' options={options} data={ purchases } search>
           <TableHeaderColumn dataField='id' isKey hidden autoValue={true}></TableHeaderColumn>
-          <TableHeaderColumn dataField='category' dataSort sortHeaderColumnClassName={ this.customSortStyle }>Category</TableHeaderColumn>
-          <TableHeaderColumn dataField='description' dataSort sortHeaderColumnClassName={ this.customSortStyle }>Description</TableHeaderColumn>
-          <TableHeaderColumn dataField='price' dataSort sortHeaderColumnClassName={ this.customSortStyle }>Price</TableHeaderColumn>
-          <TableHeaderColumn dataField='date' dataSort sortHeaderColumnClassName={ this.customSortStyle }>Date</TableHeaderColumn>
+          <TableHeaderColumn  dataField='category' dataSort >Category</TableHeaderColumn>
+          <TableHeaderColumn  dataField='description' dataSort >Description</TableHeaderColumn>
+          <TableHeaderColumn   dataField='price' dataSort >Price</TableHeaderColumn>
+          <TableHeaderColumn   dataField='date' dataSort >Date</TableHeaderColumn>
       
         </BootstrapTable>
       </div>

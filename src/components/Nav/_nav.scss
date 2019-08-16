@@ -3,7 +3,7 @@
 .nav-cont {
   display: flex;
   flex-direction: row;
-
+// flex-wrap: wrap;
   justify-content: space-between;
   background: $bgcolor;
   height: 10vh;
@@ -20,7 +20,7 @@
 
   ul {
     font-family: $font-family;
-    display: flex;
+  
     list-style: none;
 
     align-items: space-between;
@@ -28,7 +28,7 @@
   }
 
   li {
-   
+    flex-wrap: wrap;
     &:hover {
       transition: all 0.2s ease;
       margin: 1px;

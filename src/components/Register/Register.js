@@ -32,12 +32,12 @@ class Register extends Component {
     } else {
       let body = {
         username: this.state.username,
-        email: this.state.username,
+        email: this.state.email,
         password: this.state.password
       };
       Axios.post("/auth/register", body)
         .then(res => {
-          console.log(res);
+          console.log(body.username,body.email, "40");
           this.props.updateEmail(res.data.email);
           this.props.updateUsername(res.data.username)
           this.setState({redirect:true})

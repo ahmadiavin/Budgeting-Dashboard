@@ -21,7 +21,7 @@ class Overview extends Component {
       return <Redirect to="/" />;
     }
     const { purchases } = this.props.expense;
-
+console.log(this.props.auth.email)
     return (
       <Background>
         {this.props.expense.loading  ? <Loading /> : null}

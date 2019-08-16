@@ -12,7 +12,7 @@ const {
   edit,
   getBudget
 } = require("./expenseController/expenseController");
-
+const { profileEdit, profile } = require("./profileCtrl");
 //
 
 const app = express();
@@ -52,5 +52,9 @@ app.post("/api/expense/purchase", addPurchase);
 app.delete("/api/expense/purchase/:id", deletePurchase);
 app.get("/api/expense/budget", getBudget);
 app.put("/api/expense/budget/:username", edit);
+
+//Profile
+app.get("/api/profile", profile);
+app.put("/api/profile/:username", profileEdit);
 
 app.listen(5050, () => console.log("listening on  port 5050!"));

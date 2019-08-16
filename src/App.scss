@@ -6,7 +6,12 @@ $secondary: #7abfa6;
 $teritary: #aee6c5;
 $bgcolor: #333333;
 
-
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
 
 body {
   -webkit-font-smoothing: subpixel-antialiased;

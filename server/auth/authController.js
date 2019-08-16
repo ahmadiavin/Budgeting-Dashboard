@@ -16,6 +16,7 @@ module.exports = {
         username,
         email
       };
+      console.log(req.session.user, "19")
       res.status(200).json(req.session.user);
     }
   },
@@ -32,6 +33,7 @@ module.exports = {
         username,
         email: userInfo[0].email
       };
+      console.log(req.session.user)
       res.status(200).json(req.session.user);
     } else {
       res.status(401).json({
