@@ -34,10 +34,10 @@ class BSTable extends React.Component {
         placeholder={ purchases.searchPlaceholder }/> */}
         <BootstrapTable width='15' options={options} data={ purchases } search>
           <TableHeaderColumn dataField='id' isKey hidden autoValue={true}></TableHeaderColumn>
-          <TableHeaderColumn  dataField='category' dataSort >Category</TableHeaderColumn>
-          <TableHeaderColumn  dataField='description' dataSort >Description</TableHeaderColumn>
-          <TableHeaderColumn   dataField='price' dataSort >Price</TableHeaderColumn>
-          <TableHeaderColumn   dataField='date' dataSort >Date</TableHeaderColumn>
+          <TableHeaderColumn  dataField='category' sortHeaderColumnClassName={ this.customSortStyle } dataSort >Category</TableHeaderColumn>
+          <TableHeaderColumn  dataField='description' sortHeaderColumnClassName={ this.customSortStyle } dataSort >Description</TableHeaderColumn>
+          <TableHeaderColumn   dataField='price'  sortHeaderColumnClassName={ this.customSortStyle } dataSort >Price</TableHeaderColumn>
+          <TableHeaderColumn   dataField='date'sortHeaderColumnClassName={ this.customSortStyle } F dataSort >Date</TableHeaderColumn>
       
         </BootstrapTable>
       </div>

@@ -1,13 +1,13 @@
-
 import React, { Component } from "react";
 import _ from "lodash";
 import axios from "axios";
-import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom'
-import Loading from '../../Loading/Loading'
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 import SearchBar from "./SearchBar";
 import StockList from "./StockList";
 import Plot from "react-plotly.js";
+import './_stockcheck.scss'
 require("dotenv").config();
 // import StockChart from "./StockChart/StockChart";
 
@@ -25,7 +25,7 @@ class StockCheck extends Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getStock = this.getStock.bind(this)
+    this.getStock = this.getStock.bind(this);
   }
 
   getStock() {
@@ -91,8 +91,7 @@ class StockCheck extends Component {
         this.setState((state, props) => {
           return {
             ...state,
-            stocks,
-  
+            stocks
           };
         });
       })
@@ -103,20 +102,22 @@ class StockCheck extends Component {
     if (this.props.auth.username === "") {
       return <Redirect to="/" />;
     }
-    let stocks = this.state.stocks;
+    // let stocks = this.state.stocks;
     const value = this.state.value;
-    
+
     return (
       <div className="StockCheck">
-        {this.props.auth.loading  ? <Loading /> : null}
+        {this.props.auth.loading ? <Loading /> : null}
+        <header>
         <h1 className="StockCheck__Title">Stock Search</h1>
+        </header>
         <SearchBar
           value={value}
           onChange={this.handleChange}
           onClick={this.handleClick}
-          
         />
         <StockList stockItems={this.state.stocks} />
+        <br/>
         <div className="stock-cont">
           <Plot
             data={[
@@ -131,7 +132,7 @@ class StockCheck extends Component {
             layout={{
               width: 720,
               height: 440,
-              title: "Previous 100 Days Opening Values"
+              title: "Daily Open Price for latest 100 data points"
             }}
           />
         </div>
@@ -147,4 +148,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {}) (StockCheck);
+export default connect(
+  mapStateToProps,
+  {}
+)(StockCheck);

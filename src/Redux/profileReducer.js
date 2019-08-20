@@ -17,7 +17,7 @@ export function getProfile() {
 }
 
 export function editProfile(e,username, first_name, last_name, age ) {
-  e.preventDefault();
+  // e.preventDefault();
   return {
     type: EDIT_PROFILE,
     payload: axios

@@ -7,7 +7,7 @@
   justify-content: space-between;
   background: $bgcolor;
   height: 10vh;
-  max-width: 100vw;
+  // max-width: 100vw;
   .nav-logo {
     background-image: url(./leaf.svg);
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@
     text-decoration: none;
     // text-align: center;
     // line-height: 60px;
-    display: block;
+    display: flex;
     padding: 0 20px;
     font-size: 18px;
     color: white;
@@ -44,8 +44,8 @@
 
     list-style: none;
     display: flex;
-    align-items: space-between;
-    align-content: center;
+    // align-items: space-between;
+    // align-content: center;
   }
 
   li {
@@ -61,7 +61,7 @@
     &:hover {
       color: white;
     }
-
+display: flex;
     justify-content: center;
     text-decoration: none;
     text-align: center;

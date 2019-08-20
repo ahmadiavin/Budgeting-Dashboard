@@ -8,7 +8,8 @@ function SearchBar(props) {
         <form className="SearchBar_Form">
           <input className="SearchBar__Input"
                  value={ props.value }
-                 onChange={ props.onChange } />
+                 onChange={ props.onChange } 
+                 placeholder='Enter a stock symbol to search...'/>
           <button className="SearchBar__Button" onClick={ props.onClick }>search</button>
         </form>
       </div>

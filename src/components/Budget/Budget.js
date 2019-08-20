@@ -46,7 +46,7 @@ class Budget extends Component {
             <h3>
               Budget: ${budgetLimit}
               <button
-                className="editButton"
+                className="myButton"
                 onClick={() =>
                   this.setState({ editable: !this.state.editable })
                 }
@@ -64,6 +64,7 @@ class Budget extends Component {
                 onChange={this.handleChange}
               />
               <button
+              className='myButton'
                 onClick={() =>
                   this.props.editBudget(
                     this.props.auth.username,

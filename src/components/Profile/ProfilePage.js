@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-// import Loading from "../Loading/Loading";
 import Background from "../Loading/Background";
 import "./_profile.scss";
-// import Axios from "axios";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { getProfile, editProfile } from "../../Redux/profileReducer";
 import Loading from "../Loading/Loading";
+
+// import axios from "axios";
 class ProfilePage extends Component {
   constructor() {
     super();
@@ -15,49 +15,46 @@ class ProfilePage extends Component {
       last_name: "",
       age: "",
       image_url: "",
-      imageArr: [],
+      imageArr: []
     };
+
+    this.uploadWidget = this.uploadWidget.bind(this);
   }
 
   componentDidMount() {
     this.props.getProfile();
   }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  checkUploadResult = (resultEvent) => {
-    if (resultEvent.event === "success") {
-      this.setState({
-        imgArr: [...this.state.imgArr, resultEvent.info.secure_url]
-      });
-      this.setState({ image_url: resultEvent.info.secure_url });
-    }
+  uploadWidget = () => {
+    window.cloudinary.openUploadWidget(
+      {
+        cloud_name: "aliavin",
+        upload_preset: "imageProfiles",
+        sources: ["local", "url", "facebook", "instagram"]
+      },
+      (error, result) => {
+        // console.log(result)
+        this.setState({ image_url: result[0].secure_url });
+      }
+    );
   };
 
-
-showWidget = (widget) => {
-  widget.open()
-}
   render() {
-    // let widget = window.cloudinary.createUploadWidget(
-    //   {
-    //     cloudName: "aliavin",
-    //     uploadPreset: "imageProfiles",
-    //     sources: ["local", "url", "facebook", "instagram"]
-    //   },
-    //   (error, result) => {this.checkUploadResult(result)});
-    
-   
+    // console.log(this.state)
+
     if (this.props.auth.username === "") {
       return <Redirect to="/" />;
     }
 
     const { profile } = this.props.profile;
     // const {username} = this.props.auth
-    
+
     return (
       <Background>
         {this.props.profile.loading ? <Loading /> : null}
@@ -67,11 +64,11 @@ showWidget = (widget) => {
           </header>
           <div className="modal-form">
             <h1> About Me</h1>
+            
             <p>
               Tell us about yourself so we can improve the financial advice we
               provide
             </p>
-            {/* <h2>About Me</h2> */}
             <form>
               <fieldset>
                 <ul>
@@ -101,8 +98,10 @@ showWidget = (widget) => {
                       type="number"
                     />
                   </li>
-                  <label className="picture">Add a profile picture</label>
-                  <input type="file" onClick={this.showWidget} />
+                  <label className="picture">Add a profile picture <img src={this.state.image_url}  /></label>
+                  
+                  <button onClick={this.uploadWidget}>Add</button>
+                  
                 </ul>
                 <div className="submit">
                   <button
@@ -121,7 +120,6 @@ showWidget = (widget) => {
                   </button>
                 </div>
               </fieldset>
-              <img className="preview-image" src={this.image_url} alt="#" />
             </form>
           </div>
         </div>
@@ -139,6 +137,3 @@ export default connect(
   mapStateToProps,
   { getProfile, editProfile }
 )(ProfilePage);
-
-
-

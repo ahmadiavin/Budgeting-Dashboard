@@ -7,9 +7,19 @@ import {connect} from 'react-redux'
 class Nav extends React.Component {
   constructor() {
     super();
+    this.state = {
+      menuStatus: "hidden"
+    };
+
     this.logout = this.logout.bind(this);
   }
-
+toggleMenu = () => {
+    if(this.state.menuStatus === 'hidden-open') {
+      this.setState({menuStatus: 'hidden-close'});
+    } else {
+      this.setState({menuStatus: 'hidden-open'});
+    }
+  }
   logout() {
     axios
       .get("/auth/logout")

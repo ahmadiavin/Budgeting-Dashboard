@@ -27,7 +27,7 @@ export default class Chart2 extends Component {
             ]
           }}
         />
-        <p>Bar chart of budget and total expenses.</p>
+        <p>Bar chart of budget limit and total expenses.</p>
       </div>
     );
   }
