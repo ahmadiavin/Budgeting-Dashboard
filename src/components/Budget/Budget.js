@@ -51,7 +51,7 @@ class Budget extends Component {
                   this.setState({ editable: !this.state.editable })
                 }
               >
-                <FaRegEdit />
+                <FaRegEdit /> Edit
               </button>
             </h3>
           </header>

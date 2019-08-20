@@ -12,7 +12,12 @@ $bgcolor: #333333;
       -ms-flex-wrap: $wrap;
           flex-wrap: $wrap;
 }
-
+.chartP {
+  // padding: 1%;
+  margin: 5px 0 36px 1px;
+  color: #666666;
+  font-size: 13px;
+}
 body {
   -webkit-font-smoothing: subpixel-antialiased;
   background:#FFFFFF;

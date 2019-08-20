@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { updateEmail, updateUsername } from "../../Redux/auth/authReducer";
 import Background from '../Loading/Background'
 
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -83,6 +84,7 @@ class Login extends React.Component {
           </p>
         </section>
       </div>
+      
       </Background>
     );
   }

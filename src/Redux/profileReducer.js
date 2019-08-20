@@ -28,7 +28,7 @@ export function editProfile(e,username, first_name, last_name, age ) {
 
 
 export default function profileReducer(state = initialState, action) {
-    console.log(action, "help")
+    // console.log(action)
     switch (action.type) {
     case `${GET_PROFILE}_PENDING`:
       return {

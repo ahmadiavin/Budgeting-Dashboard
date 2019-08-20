@@ -3,13 +3,14 @@
 .nav-cont {
   display: flex;
   flex-direction: row;
-// flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   background: $bgcolor;
   height: 10vh;
   max-width: 100vw;
   .nav-logo {
-    background-image: url(https://images.mint.com/web-client/images/logo/logo2018/logo_white.svg);
+    background-image: url(./leaf.svg);
+    background-repeat: no-repeat;
     width: 81px;
     height: 30px;
     margin-top: 13px;
@@ -17,17 +18,38 @@
       cursor: pointer;
     }
   }
+  p {
+    &:hover {
+      color: white;
+    }
+
+    // justify-content: center;
+    text-decoration: none;
+    // text-align: center;
+    // line-height: 60px;
+    display: block;
+    padding: 0 20px;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-family: $font-family;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
 
   ul {
+    display: flex;
+    flex-wrap: wrap;
     font-family: $font-family;
-  
-    list-style: none;
 
+    list-style: none;
+    display: flex;
     align-items: space-between;
     align-content: center;
   }
 
   li {
+    display: flex;
     flex-wrap: wrap;
     &:hover {
       transition: all 0.2s ease;

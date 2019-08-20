@@ -25,15 +25,19 @@ class Nav extends React.Component {
   render() {
     return (
       <nav className="nav-cont">
-        <div className="nav-logo" />
+        <div className="nav-logo"><p>Minty </p></div>
+        
         <section>
           <div className="link-container">
             <ul>
               <li>
-                <a href="#Overview">Overview</a>
+                <a href="#Overview">Expenditures</a>
               </li>
               <li>
                 <a href="#Budget">Budget</a>
+              </li>
+              <li>
+                <a href="#stock">Investments</a>
               </li>
 
               <li>

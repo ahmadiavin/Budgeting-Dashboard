@@ -14,6 +14,7 @@ class Chart1 extends Component {
       budgetLimit - moneySpent >= 0 ? budgetLimit - moneySpent : 0;
     return (
       <div className="chart1-cont">
+        
         <Doughnut
           data={{
             labels: ["Total Spent", "Remaining"],
@@ -27,6 +28,7 @@ class Chart1 extends Component {
             ]
           }}
         />
+        <p className='chartP'>Your remaining budget and total amount spent.</p>
       </div>
     );
   }

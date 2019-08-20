@@ -31,6 +31,7 @@ class BarChart extends Component {
             ]
           }}
         />
+        <p>Total expenses by category listed in a horizontal bar chart. </p>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Bar } from "react-chartjs-2";
-
+import './_chart2.scss'
 export default class Chart2 extends Component {
   render() {
     let { purchases, budgetLimit } = this.props;
@@ -11,13 +11,13 @@ export default class Chart2 extends Component {
     const remainingBudget =
       budgetLimit - moneySpent >= 0 ? budgetLimit - moneySpent : 0;
     return (
-      <div className="chart1-cont">
+      <div className="chart2-cont">
         <Bar
           data={{
             labels: [ "Outflow", "Inflow"],
             datasets: [
               {
-                label: "Total Expenditure",
+                label: "Total Expenditures",
                 data: [moneySpent, remainingBudget],
                 backgroundColor: ["rgb(184, 37, 37)", "rgb(49, 184, 37)"],
                 hoverBackgroundColor: [],
@@ -27,6 +27,7 @@ export default class Chart2 extends Component {
             ]
           }}
         />
+        <p>Bar chart of budget and total expenses.</p>
       </div>
     );
   }

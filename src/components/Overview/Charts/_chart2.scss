@@ -1,6 +1,6 @@
-@import "../../../App.scss";
+@import '../../../App.scss';
 
-.chart1-cont {
+.chart2-cont {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,11 +8,7 @@
     flex-wrap: wrap;
     width: 300px;
    height: 300px;
-   
+    p {
+        @extend .chartP !optional
+    }
 }
-.chartP {
-    // padding: 1%;
-    margin: 5px 0 36px 1px;
-    color: #666666;
-    font-size: 13px;
-  }
