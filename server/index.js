@@ -1,6 +1,7 @@
 //Controllers
 
 require("dotenv").config();
+const path = require('path'); // Usually moved to the start of file
 // const cloudinary = require('cloudinary')
 const express = require("express");
 const massive = require("massive");
@@ -76,5 +77,9 @@ app.put("/api/profile/:username", profileEdit);
 //     .then(results => res.json(results))
 // })
 
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 app.listen(5050, () => console.log("listening on  port 5050!"));
