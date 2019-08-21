@@ -93,8 +93,10 @@ class Register extends Component {
           <br></br>
           Already have an account? <a href='#/'>Login</a>
         </section>
+        
         <br />
-        <div className='bad-login'>
+        
+        {/* <div className='bad-login'>
         {this.state.badLogin === true ? (
           <h3>
             Your passwords did not match. Please enter two matching passwords
@@ -104,6 +106,7 @@ class Register extends Component {
           <h3>Username taken. Please choose another. </h3>
         ) : null}
         </div>
+        <div className='margin'/> */}
       </div>
       </Background>
     );

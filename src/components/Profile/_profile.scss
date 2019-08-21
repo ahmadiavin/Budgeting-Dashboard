@@ -1,7 +1,7 @@
 @import "../../App.scss";
 .container {
  
-  margin-bottom: 5%;
+  // margin-bottom: 5%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -24,8 +24,9 @@
   }
 }
 .modal-form {
+  margin-bottom: 5%;
   border-left: 1px solid #ccc;
-  
+  background: #f7f7f7;
   margin-top: 1%;
   display: flex;
   justify-content: center;

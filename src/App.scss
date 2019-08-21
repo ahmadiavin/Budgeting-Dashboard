@@ -26,10 +26,15 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  height: 100%;
+
   // position: relative;
   
   // vertical-align: baseline;
   
+}
+html {
+  height: 100%
 }
 
 // @import './styles//variables'

@@ -54,7 +54,7 @@ class AddPurchase extends Component {
               <option value="Travel">Travel</option>
               <option value="Rent">Rent</option>
               <option value="Food">Food</option>
-              <option value="Gas">Gas</option>
+              <option value="Education">Education</option>
               <option value="Entertainment">Entertainment</option>
             </select>
           </div>

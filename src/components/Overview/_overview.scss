@@ -63,8 +63,12 @@
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    .listContainer{
+      margin-bottom:10%;
+    }
   }
   .charts {
+    
     justify-content: space-around;
     display: flex;
     align-items: center;

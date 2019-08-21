@@ -98,7 +98,7 @@ class ProfilePage extends Component {
                       type="number"
                     />
                   </li>
-                  <label className="picture">Add a profile picture <img src={this.state.image_url}  /></label>
+                  <label className="picture">Add a profile picture <img src={this.state.image_url} alt='' /></label>
                   
                   <button onClick={this.uploadWidget}>Add</button>
                   
