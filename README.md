@@ -2,6 +2,8 @@
 
 ### A personal budgeting dashboard inspired by Mint
 
+
+
 - Built primarily with the SERN Stack. Full list of Technologies used : React, Redux, Sass, Node, Express, bcrypt, PostgreSQL,
   Chart.js.
 
@@ -9,7 +11,7 @@
 - Individual project completed in two weeks
 
 - Self taught Sass and Chart.js to display data in a stylish and meaningful way.
-
+- [View the live site](http://www.minty.cash/ "View the Live Site")
 - - - -
 
 ![Expense Tracker View](./images/minty1.jpg)
