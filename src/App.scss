@@ -6,11 +6,12 @@ $secondary: #7abfa6;
 $teritary: #2c98ca;
 $bgcolor: #333333;
 
-@mixin flex-wrap($wrap) {
-  -webkit-flex-wrap: $wrap;
-     -moz-flex-wrap: $wrap;
-      -ms-flex-wrap: $wrap;
-          flex-wrap: $wrap;
+@mixin flexCenter($direction){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: $direction;
 }
 .chartP {
   // padding: 1%;

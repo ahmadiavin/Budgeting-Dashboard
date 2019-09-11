@@ -6,15 +6,15 @@
   justify-content: center;
   align-items: center;
   align-content: center;
- margin-bottom: 20%;
+ 
   // padding-right: 20%;
   // padding-left: 30%;
-  height: 50vh;
+  // height: 50vh;
   
   section {
     // margin-bottom: 20%;
     
-    margin-top: 20%;
+    margin-top: 5%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -24,6 +24,7 @@
     height: 52vh;
     width: 20vw;
     padding: 5%;
+    margin-bottom: 5%;
     
   }
   .register-header {

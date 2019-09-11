@@ -1,11 +1,7 @@
 @import "../../App.scss";
 
 .login-cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
- 
+@include flexCenter(row);
   overflow: hidden;
   // height: 55vh;
 
