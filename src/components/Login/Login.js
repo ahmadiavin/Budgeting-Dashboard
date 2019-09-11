@@ -60,8 +60,8 @@ class Login extends React.Component {
       <Background>
       <div className="login-cont">
         <section>
-          <h2>Please Login</h2>
-          <h4>You can log in using the input fields</h4>
+          <h2>Sign In</h2>
+          <h4>Welcome back </h4>
           <input
             name="username"
             placeholder="Username"

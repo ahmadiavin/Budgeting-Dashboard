@@ -45,6 +45,7 @@ class Register extends Component {
         .catch(err => {
           if (err.req.status === 406 && err.res.data.err === "Username Taken") {
             this.setState({ usernameTaken: true });
+           
           }
         });
     }
@@ -60,7 +61,7 @@ class Register extends Component {
         <section>
           <div className="register-header">
             <h2>Create an account</h2>
-            <h4>Your account, to acces this site.</h4>
+            <h4>Your account, to access your own personal budgeting dashboard.</h4>
           </div>
          
             <input
@@ -87,7 +88,7 @@ class Register extends Component {
               type='password'
             /><br/>
          
-          <button onClick={this.handleClick}>
+          <button className='registerBtn' onClick={this.handleClick}>
             <FaLock /> Register
           </button>
           <br></br>
@@ -96,7 +97,10 @@ class Register extends Component {
         
         <br />
         
-        {/* <div className='bad-login'>
+      
+        
+      </div>
+      <div className='bad-login'>
         {this.state.badLogin === true ? (
           <h3>
             Your passwords did not match. Please enter two matching passwords
@@ -106,8 +110,7 @@ class Register extends Component {
           <h3>Username taken. Please choose another. </h3>
         ) : null}
         </div>
-        <div className='margin'/> */}
-      </div>
+      <br/>
       </Background>
     );
   }

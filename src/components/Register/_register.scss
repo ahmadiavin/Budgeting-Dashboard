@@ -25,6 +25,21 @@
     width: 20vw;
     padding: 5%;
     margin-bottom: 5%;
+    .registerBtn {
+      color: white;
+      background: #0077c5;
+      border: #0077c5;
+      border-radius: 4px;
+      float: left;
+      text-transform: capitalize;
+      
+      width: 100%;
+      line-height: 2.4rem;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 0.8rem;
+      
+    }
     
   }
   .register-header {
@@ -68,20 +83,7 @@
     
   }
 
-  button {
-    color: white;
-    background: #0077c5;
-    border: #0077c5;
-    border-radius: 4px;
-    float: left;
-    text-transform: capitalize;
-    height: 15vh;
-    width: 100%;
-    line-height: 1.4;
-    white-space: nowrap;
-    cursor: pointer;
-    
-  }
+  
   // .button2 {
   //   @extend .global-button;
   //   color: green;
@@ -90,11 +92,11 @@
   .bad-login {
   
       text-align: center;
-      margin-bottom: 20%;
-      margin-left: 20%;
-      border: 1px outset rgb(146, 134, 134);
-      border-radius: 5px;
+      
+      // border: 1px outset rgb(146, 134, 134);
+      // border-radius: 5px;
       background:lightgray;
+      color: red;
     
   }
 }
