@@ -16,7 +16,7 @@
     "lodash": "^4.17.15",
     "massive": "^5.11.2",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "plotly.js": "^1.49.2",
     "react": "^16.8.6",
     "react-apollo": "^3.0.1",
